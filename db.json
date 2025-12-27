@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "8e3a",
+      "email": "appu@mail.com",
+      "name": "appu",
+      "phone": "98765",
+      "password": "qwert"
+    },
+    {
+      "id": "4b7e",
+      "email": "neethu@mail.com",
+      "name": "neethu",
+      "phone": "23456",
+      "password": "neethu"
+    },
+    {
+      "id": "b035",
+      "email": "",
+      "name": "",
+      "phone": "9087",
+      "password": ""
+    },
+    {
+      "id": "b2ca",
+      "email": "",
+      "name": "",
+      "phone": "789",
+      "password": ""
+    },
+    {
+      "id": "9bf7",
+      "email": "",
+      "name": "",
+      "phone": "",
+      "password": ""
+    },
+    {
+      "id": "0edb",
+      "email": "",
+      "name": "",
+      "phone": "",
+      "password": ""
+    }
+  ]
+}
