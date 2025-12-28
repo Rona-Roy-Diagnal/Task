@@ -1,5 +1,5 @@
 
-import { action, originals } from '../apis';
+import { action, comedy, originals } from '../apis';
 
 import ListMovies from '../ListMovies/ListMovies';
 import './Home.css'
@@ -10,6 +10,7 @@ const Home= () => {
 <>
 <ListMovies title='Originals' url={originals}/>
 <ListMovies title='action' url={action}/>
+<ListMovies title='Comedy' url={comedy}/>
 </>
   )
  

@@ -3,12 +3,15 @@ import axios from '../axios';
 import { imageUrl } from '../Constant/Constants';
 import './ListMovies.css'
 
+import { useNavigate } from 'react-router-dom';
+
 interface props {
   url: string;
   title:string;
 }
 const ListMovies = ({title,url}:props) => {
   const [videos, setVideos] = useState<any[]>([]);
+   const navigate= useNavigate();
   useEffect(() => {
     axios.get(url).then(res => {
       console.log(res.data.results)
@@ -18,8 +21,12 @@ const ListMovies = ({title,url}:props) => {
   }, [url])
   const handleVideo=(id:number)=>{
     console.log(id);
+  navigate(`/details/${id}`);
     
   }
+
+   
+
   return (
     <div  >
       <h3>{title}</h3>
@@ -27,14 +34,14 @@ const ListMovies = ({title,url}:props) => {
       {
         videos.map((video) => (
           
-            <img onClick={()=>handleVideo(video.id)} className='video-img' src={`${imageUrl + video.poster_path}`}></img>
+            <img key={video.id} onClick={()=>handleVideo(video.id)} className='video-img' src={`${imageUrl + video.poster_path}`}></img>
           
         )
 
         )
       }
       </div>
-
+      
     </div>
   )
 }

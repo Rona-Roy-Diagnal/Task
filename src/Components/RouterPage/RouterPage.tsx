@@ -6,6 +6,7 @@ import LandingPage from '../LandingPage/LandingPage'
 import Home from '../../Home/Home'
 import Signin from '../../Signin/Signin'
 import Register from '../../Signin/Register'
+import Details from '../../Details/Details'
 
 
 
@@ -19,6 +20,7 @@ const RouterPage:React.FC = () => {
             <Route path='/signin' element={<Signin/>}></Route>
              <Route path='/home' element={<Home />}></Route>
         <Route path='/register' element={<Register/>}></Route>
+          <Route path='/details/:id' element={<Details/>}></Route>
         </Routes>
         </BrowserRouter>
     </div>

@@ -15,32 +15,11 @@
       "password": "neethu"
     },
     {
-      "id": "b035",
-      "email": "",
-      "name": "",
-      "phone": "9087",
-      "password": ""
-    },
-    {
-      "id": "b2ca",
-      "email": "",
-      "name": "",
-      "phone": "789",
-      "password": ""
-    },
-    {
-      "id": "9bf7",
-      "email": "",
-      "name": "",
-      "phone": "",
-      "password": ""
-    },
-    {
-      "id": "0edb",
-      "email": "",
-      "name": "",
-      "phone": "",
-      "password": ""
+      "id": "11ac",
+      "email": "nan@mail.com",
+      "name": "nan",
+      "phone": "12345",
+      "password": "nan"
     }
   ]
 }

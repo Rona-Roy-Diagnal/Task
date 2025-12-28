@@ -23,3 +23,10 @@ h3{
     color: blue;
     margin: 10px;
 }
+button{
+    background-color: blue;
+    height: 20px;
+    width: 70px;
+    border-radius: 5px;
+    
+}

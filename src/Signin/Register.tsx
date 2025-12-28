@@ -53,19 +53,22 @@ const validate=(values:errors)=>{
 
      };
      const regex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+     const validatePhoneNumberRegex = /^\+?[1-9][0-9]{7,14}$/;
      if(!values.name){
           errors.name="Name is required"
      }
      if(!values.email){
-          errors.email="Email is not valid"
+          errors.email="Email is required"
      }else if(!regex.test(values.email)){
           errors.email="Not a valid mail"
      }
      if(!values.phone){
-          errors.phone="Phone is not valid"
+          errors.phone="Phone is required"
+     }else if(!validatePhoneNumberRegex.test(values.phone)){
+          errors.phone="Phone number not valid"
      }
      if(!values.password){
-          errors.password="Password is not valid"
+          errors.password="Password is required"
      }else if(values.password.length<4){
           errors.password="Password should be more than 4 character"
      }
@@ -81,29 +84,30 @@ const validate=(values:errors)=>{
     setData((prev)=>({...prev,[name]:value}))
    }
   return (
-    <div>
+  
+     <div className='outer'>
         <form className='form' onSubmit={handleSubmit}>
-          <div>
-            <label className='form-label' htmlFor='email'> Email : </label>
+          
+            <label className='form-label' htmlFor='email'> Email  </label>
                  <input className='input-field'type='text' name='email' value={data.email} onChange={handleChange}></input>
                  
-                 </div>
-                 <div><p>{formErrors.email}</p>
-            <label className='form-label'htmlFor='name'> Name : </label>
+                 
+                 <p>{formErrors.email}</p>
+            <label className='form-label'htmlFor='name'> Name </label>
                  <input className='input-field' type='text' name='name' value={data.name} onChange={handleChange}></input>
              
-             </div><div><p>{formErrors.name}</p>
-            <label className='form-label'htmlFor='phone'> Ph Number : </label>
+             <p>{formErrors.name}</p>
+            <label className='form-label'htmlFor='phone'> Ph Number  </label>
                  <input className='input-field'type='text' name='phone' value={data.phone} onChange={handleChange}></input>
-             </div>
-             <div>
+            
              <p>{formErrors.phone}</p>
-            <label className='form-label'htmlFor='password'> Password : </label>
+            <label className='form-label'htmlFor='password'> Password  </label>
                  <input className='input-field'type='text' name='password' value={data.password} onChange={handleChange}></input>
-            </div> <p>{formErrors.password}</p>
+            <p>{formErrors.password}</p>
            <button className='btn'type='submit'>Register</button>
         </form>
-    </div>
+        </div>
+    
   )
 }
 
