@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react'
+import  React, { useEffect, useState } from 'react'
 import axios from '../../axios';
 import { imageUrl } from '../../Constant/Constants';
 import './ListMovies.css'
@@ -9,7 +9,7 @@ interface props {
   url: string;
   title:string;
 }
-const ListMovies= ({title,url}:props) => {
+const ListMovies:React.FC<props>= ({title,url}:props) => {
   const [videos, setVideos] = useState<any[]>([]);
    const navigate= useNavigate();
   useEffect(() => {

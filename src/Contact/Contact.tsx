@@ -1,6 +1,6 @@
 import React from 'react'
 import './Contact.css'
-const Contact = () => {
+const Contact :React.FC= () => {
   return (
     <div className='container'>
         <div className="contact-container">

@@ -1,12 +1,13 @@
 
 
+import type React from 'react';
 import { Popular, Top_rated, Upcoming } from '../../Constant/Url';
 
 import ListMovies from '../ListMovies/ListMovies';
 import './Home.css'
 
 
-const Home= () => {
+const Home:React.FC= () => {
   return(
 <div className='home-div'>
 

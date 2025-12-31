@@ -71,10 +71,10 @@ const Details:React.FC = () => {
       
       
     <div className='overview-btn'>
-    
+      <p className='genre'>{details.genres[0].name+", "+details.genres[1].name}</p> 
      <p className='overview'>{details.overview}</p>
-      <p className='overview'>{details.genres[0].name}</p> 
-    {/* <p>{Math.round(details.vote_average*100)/100+ ' ★'}</p> */}
+    
+   
     
     {
       !uid && (<p>Video not Available at this moment</p>)
