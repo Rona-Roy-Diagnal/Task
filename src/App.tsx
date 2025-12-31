@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import Navbar from './Components/Navbar/Navbar'
+
 import RouterPage from './Components/RouterPage/RouterPage'
 
 
-const App = () => {
+const App :React.FC= () => {
   return (
     <div>
       <RouterPage/>

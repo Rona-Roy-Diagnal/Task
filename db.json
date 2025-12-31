@@ -20,6 +20,27 @@
       "name": "nan",
       "phone": "12345",
       "password": "nan"
+    },
+    {
+      "id": "a9ae",
+      "email": "ponnu@mail.com",
+      "name": "ponnu",
+      "phone": "1234567890",
+      "password": "ponnu"
+    },
+    {
+      "id": "d42c",
+      "email": "ronaroyvettikunnel@gmail.com",
+      "name": "Rona Roy",
+      "phone": "1234567890",
+      "password": "zxcvbn"
+    },
+    {
+      "id": "3234",
+      "email": "nan@mail.com",
+      "name": "nandan",
+      "phone": "1234567890",
+      "password": "123456"
     }
   ]
 }

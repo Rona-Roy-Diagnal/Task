@@ -1,0 +1,159 @@
+.outer {
+
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 100vh;
+  background-position: center;
+  background-image: url("src/assets/background_img.jpg");
+  background-size: cover;
+  background-position: center;
+
+}
+
+.form {
+
+  width: 400px;
+  color: white;
+
+
+  padding: 20px;
+  margin: 5px;
+  background-color: #1c1c1c;
+  border: 2px solid #d8b61a;
+  text-align: center;
+  margin-left: 10px;
+
+}
+
+.form h2 {
+  background-color: #1c1c1c;
+  margin-bottom: 10px;
+}
+
+.form p {
+  left: 20px;
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: #1c1c1c;
+}
+
+.form-label {
+  background-color: #1c1c1c;
+
+}
+
+.form input {
+
+  color: #d8b61a;
+
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+
+  width: 95%;
+
+}
+
+.form input::placeholder {
+  color: #d8b61a;
+}
+
+.btn {
+  margin-top: 20px;
+
+  color: white;
+  background: linear-gradient(to bottom right, #d9c210, black);
+
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  align-self: center;
+  width: 100%;
+}
+
+.btn:hover {
+  /* background-color: rgb(46, 46, 141); */
+
+  color: black;
+}
+
+.register {
+
+
+  margin-top: 30px;
+  background-color: #1c1c1c;
+  text-decoration: none;
+
+}
+
+.register a {
+  text-decoration: none;
+  color: #d8b61a;
+  background-color: #1c1c1c;
+
+}
+
+/* phone */
+@media (max-width: 600px) {
+
+  .outer {
+    padding: 10px;
+  }
+
+  .form {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .form h2 {
+    font-size: 18px;
+  }
+
+  .form input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .btn {
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .register a {
+    font-size: 13px;
+  }
+}
+/* tablet */
+@media (min-width: 601px) and (max-width: 768px) {
+
+  .form {
+    width: 360px;
+  }
+
+  .form h2 {
+    font-size: 20px;
+  }
+}
+
+/* desktop */
+@media (min-width: 1200px) {
+
+  .form {
+    width: 450px;
+  }
+
+  .form h2 {
+    font-size: 22px;
+  }
+
+  .btn {
+    height: 36px;
+    font-size: 15px;
+  }
+}

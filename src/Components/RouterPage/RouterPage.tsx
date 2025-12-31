@@ -3,10 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 import LandingPage from '../LandingPage/LandingPage'
 
-import Home from '../../Home/Home'
-import Signin from '../../Signin/Signin'
-import Register from '../../Signin/Register'
-import Details from '../../Details/Details'
+import Home from '../Home/Home'
+import Signin from '../Signin/Signin'
+import Register from '../Signin/Register'
+import Details from '../Details/Details'
+import Contact from '../../Contact/Contact'
+
 
 
 
@@ -21,6 +23,7 @@ const RouterPage:React.FC = () => {
              <Route path='/home' element={<Home />}></Route>
         <Route path='/register' element={<Register/>}></Route>
           <Route path='/details/:id' element={<Details/>}></Route>
+       <Route path='/contact' element={<Contact/>} > </Route>
         </Routes>
         </BrowserRouter>
     </div>
