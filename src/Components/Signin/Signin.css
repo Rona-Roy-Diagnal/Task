@@ -52,7 +52,7 @@
   color: #d8b61a;
 
   margin-top: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #d8b61a;
   border-radius: 4px;
   padding: 8px;
 
@@ -61,7 +61,7 @@
 }
 
 .form input::placeholder {
-  color: #d8b61a;
+  color: white;
 }
 
 .btn {

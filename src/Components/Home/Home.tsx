@@ -8,9 +8,10 @@ import './Home.css'
 
 
 const Home:React.FC= () => {
+ 
   return(
 <div className='home-div'>
-
+ 
 <ListMovies title='POPULAR' url={Popular}/>
 <ListMovies title='TOP RATED' url={Top_rated}/>
 <ListMovies title='UPCOMING' url={Upcoming}/>

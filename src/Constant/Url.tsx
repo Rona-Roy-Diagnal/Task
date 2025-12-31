@@ -8,7 +8,7 @@ export const horror = `/discover/movie?api_key=${API_KEY}&with_genres=27`;
 export const movieDetails=(id:string)=>`movie/${id}?api_key=${API_KEY}`
 export const movieVideos=(id:string)=>`movie/${id}/videos?api_key=${API_KEY}`
 
-
+export const serach=(movie:string)=>`https://api.themoviedb.org/3/search/${movie}`
 
 export const recommendations=(id:string)=>`/movie/${id}/recommendations?api_key=${API_KEY}&language=en-US`
 

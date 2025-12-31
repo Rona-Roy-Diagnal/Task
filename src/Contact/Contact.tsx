@@ -13,7 +13,7 @@ const Contact :React.FC= () => {
     </div>
     <div className="contact-item">
       <span>Phone</span>
-      <a href="tel:+917994685453">+91 7994685453</a>
+      <a href="tel:+911234567890">+91 678** *****</a>
     </div>
     </div>
     
