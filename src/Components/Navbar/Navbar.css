@@ -1,43 +1,43 @@
-.navbar{
-    background-color:black;
-    width: 100%;
-    height: 40px;
-   
-    display: flex;
-    justify-content: space-between;
-    border-bottom:solid 2px #d8b61a;
+.navbar {
+  background-color: black;
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 2px #d8b61a;
 }
 
-h1{
-   color: #d8b61a;
-    padding: 2px;
+h1 {
+  color: #d8b61a;
+  padding: 2px;
 }
 
 
-.navbar button{
-   
-     font-size: 10px;
-     font-weight: bold;
-    background:linear-gradient(to bottom right,#e1c732,rgba(107, 98, 2, 0.336));
-    border: none;
-   margin-top: 5px;
-   margin-right: 10px;
-   margin-bottom: 4px;
-    padding: 2px;
-     height: 30px;
-    width: 70px;
- } 
- 
-@media (max-width: 600px) {
+.navbar button {
+
+  font-size: 10px;
+  font-weight: bold;
+  background: linear-gradient(to bottom right, #e1c732, rgba(107, 98, 2, 0.336));
+  border: none;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+  padding: 2px;
+  height: 30px;
+  width: 70px;
+}
+
+@media (max-width: 480px) {
 
   .navbar {
     height: 45px;
     padding: 0 8px;
   }
 
-  
 
-  
+
+
 
   .signin {
     width: 55px;
@@ -47,27 +47,18 @@ h1{
 }
 
 
-@media (min-width: 601px) and (max-width: 768px) {
-
-  
-
- 
-
+@media screen and (min-width: 481px) and (max-width: 768px) {
   .signin {
     width: 58px;
   }
 }
 
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
 
   .navbar {
     height: 50px;
   }
-
-  
-
-  
 
   .signin {
     width: 70px;

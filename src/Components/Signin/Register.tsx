@@ -33,7 +33,7 @@ const Register: React.FC = () => {
      const validate = (values: Props): Errors => {
           const errors: Errors = {};
           const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-          const phoneRegex = /^\+?[1-9][0-9]{7,14}$/;
+          const phoneRegex = /^\+?[1-9][0-9]{9}$/;
 
           if (!values.name) {
                errors.name = "Name is required";

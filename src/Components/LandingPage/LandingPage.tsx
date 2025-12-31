@@ -10,7 +10,7 @@ const LandingPage :React.FC= () => {
     <div className='cover'>
       
       <div>
-        <h2>See What's Next.</h2>
+        <h2>SEE WHAT'S NEXT.</h2>
         <p>WATCH ANYWHERE. CANCEL ANYTIME</p>
      <Link to='/register' replace={true}><button className='signup'>SIGN UP</button></Link>
      </div>

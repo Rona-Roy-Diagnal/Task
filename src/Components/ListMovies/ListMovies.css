@@ -14,7 +14,7 @@
     /* float: left; */
 
     gap: 2px;
-    background-color: rgba(14, 11, 11, 0.863);
+    background-color:black
     ;
 }
 
@@ -26,8 +26,7 @@
     margin-left: 10px;
     margin-top: 5px;
     position: relative;
-
-
+    background-color:  black
 }
 
 .img-rating {
@@ -37,7 +36,7 @@
 
 .rating {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    
     bottom: 4px;
     right: 0px;
     color: white;
@@ -55,7 +54,7 @@
     height: 150px;
     width: 150px;
     cursor: pointer;
-    z-index: -1;
+
 
 }
 
@@ -71,10 +70,10 @@
 .poster-div:hover .poster-title,
 .poster-div:hover .rating {
     opacity: 1;
-    transform: translateY(0);
+    
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
     .list-container h2 {
         font-size: 16px;
@@ -108,7 +107,7 @@
 }
 
 
-@media (min-width: 601px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
 
     .list-container h2 {
         font-size: 18px;
@@ -129,7 +128,7 @@
     }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
 
     .poster-div img {
         width: 180px;

@@ -64,7 +64,8 @@ const Details:React.FC = () => {
       
    <div className='right-content'>
           <div className='title-rating'>
-                <h1>{details.title} </h1><h2>{Math.round(details.vote_average*100)/100+ ' ★'}</h2>
+                <h1>{details.title} </h1>
+                <h2>{Math.round(details.vote_average*100)/100+ ' ★'}</h2>
           </div>
       
       
@@ -72,7 +73,7 @@ const Details:React.FC = () => {
     <div className='overview-btn'>
     
      <p className='overview'>{details.overview}</p>
-     {/* <p>{details.genres}</p> */}
+      <p className='overview'>{details.genres[0].name}</p> 
     {/* <p>{Math.round(details.vote_average*100)/100+ ' ★'}</p> */}
     
     {
