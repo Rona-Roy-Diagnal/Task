@@ -5,7 +5,7 @@
     text-align: center;
     height: 100vh;
      background-position: center; /*starting position of img with container  */
-    background-image: url("src/assets/background_img.jpg");
+    background-image: url("background_img.jpg");
     background-size: cover;
     
 }
