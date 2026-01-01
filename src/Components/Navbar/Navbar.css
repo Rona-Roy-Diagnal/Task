@@ -12,7 +12,9 @@
   color:#E50914;
   padding: 2px;
 }
-
+.navbar a{
+  text-decoration: none;
+}
 
 .navbar button{
 border-radius: 3px;
