@@ -2,7 +2,6 @@ import  React, { useEffect, useState } from 'react'
 import axios from '../../axios';
 import { imageUrl } from '../../Constant/Constants';
 import './ListMovies.css'
-
 import {useNavigate } from 'react-router-dom';
 
 interface props {
@@ -22,8 +21,7 @@ const ListMovies:React.FC<props>= ({title,url}:props) => {
   }, [url])
   const handleVideo=(id:number)=>{
     console.log(id);
-      
-   navigate(`/details/${id}`);
+    navigate(`/details/${id}`);
   }
 
    

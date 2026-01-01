@@ -1,20 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar: React.FC = () => {
-  const [sign, setSign] = useState<boolean>(true);
+  const [sign, setSign] = useState<boolean>(false);
    
   const navigate=useNavigate();
-  
+  useEffect(()=>{
+    const toggle=localStorage.getItem('sign')
+    if(toggle=='true'){
+      setSign(true);
+    }
+  },[])
   const handleSignin = () => {
-    setSign(false);
-    
+    localStorage.setItem('sign','true');
+    setSign(true);
 
   }
   const handleSignout = () => {
-    setSign(true);
-    
+     localStorage.removeItem('sign');
+    setSign(false)
   }
   const handleContact=()=>{
     navigate('/contact');
@@ -25,13 +30,13 @@ const Navbar: React.FC = () => {
     <div>
        <button  className='signin'onClick={handleContact}>CONTACT</button>
       {
-        sign && <Link to='/signin' replace={true} ><button onClick={handleSignin} className='signin'>SIGN IN</button></Link>
+        !sign && <Link to='/signin' replace={true}> <button onClick={handleSignin} className='signin'>SIGN IN</button></Link>
       
       }
       
       {
          
-       !sign   &&<Link to='/' replace={true}> <button onClick={handleSignout} className='signin'>LOGOUT</button></Link>
+       sign   && <Link to='/' replace={true}> <button onClick={handleSignout} className='signin'>LOGOUT</button></Link>
       }
      </div>
     </div>

@@ -7,10 +7,7 @@
   align-items: center;
   background-color: black;
   height: 100vh;
-  background-position: center;
-  background-image: url("/public/background_img.jpg");
-  background-size: cover;
-  background-position: center;
+ 
 
 }
 
@@ -23,7 +20,7 @@
   padding: 20px;
   margin: 5px;
   background-color: #1c1c1c;
-  border: 2px solid #d8b61a;
+  border: 2px solid #E50914;
   text-align: center;
   margin-left: 10px;
 
@@ -49,10 +46,10 @@
 
 .form input {
 
-  color: #d8b61a;
+  color: white;
 
   margin-top: 20px;
-  border: 1px solid #d8b61a;
+  border: 1px solid white;
   border-radius: 4px;
   padding: 8px;
 
@@ -68,7 +65,7 @@
   margin-top: 20px;
 
   color: white;
-  background: linear-gradient(to bottom right, #d9c210, black);
+  background: #E50914;
 
   height: 30px;
   border: none;
@@ -94,7 +91,7 @@
 
 .register a {
   text-decoration: none;
-  color: #d8b61a;
+  color: white;
   background-color: #1c1c1c;
 
 }

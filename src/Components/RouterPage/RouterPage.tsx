@@ -12,6 +12,7 @@ import Contact from '../../Contact/Contact'
 
 
 
+
 const RouterPage:React.FC = () => {
   return (
     <div>
@@ -24,6 +25,7 @@ const RouterPage:React.FC = () => {
         <Route path='/register' element={<Register/>}></Route>
           <Route path='/details/:id' element={<Details/>}></Route>
        <Route path='/contact' element={<Contact/>} > </Route>
+       
         </Routes>
         </BrowserRouter>
     </div>

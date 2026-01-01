@@ -1,6 +1,79 @@
-input{
 
+.outer-cont {
+  width: 100%;
+  min-height: 80vh;
+  background-color: #221F1F;
+  color: yellow;
 }
-button{
-    background-color: yellow;
+.home-div {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+
+  
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2)
+    ),url("https://image.tmdb.org/t/p/original//iN41Ccw4DctL8npfmYg1j5Tr1eb.jpg");
+opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.content {
+  max-width: 600px;
+  padding: 60px;
+  color: white;
+  
+  background-color: transparent;
+}
+
+
+.content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  background-color: transparent;
+}
+
+
+.content h2 {
+    font-weight: bold;
+  
+  font-size: 1.1rem;
+  
+  line-height: 1.5;
+  color: #ddd;
+  margin-top: 20px;
+   background-color: transparent;
+}
+
+
+.btns {
+  margin-top: 20px;
+   background-color: transparent;
+}
+
+
+.btns button {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #E50914;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+.btns button:hover {
+  background-color: #e6e6e6;
+  
 }

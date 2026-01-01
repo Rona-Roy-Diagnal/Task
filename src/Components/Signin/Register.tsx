@@ -76,12 +76,25 @@ const Register: React.FC = () => {
           const hasErrors = Object.values(errors).some(elmnt => elmnt !== "");//check if atleast one element satisfies condition
           if (hasErrors) return;
 
-          try {
-               await axios.post("http://localhost:8000/users", data);
+          // try {
+          //      await axios.post("http://localhost:8000/users", data);
+          //      alert("Registration successful!");
+          //      navigate("/signin");
+          // } catch (err) {
+          //      console.error(err);
+          // }
+          const users = JSON.parse(localStorage.getItem("users") || "[]") as Props[]; //.....
+          const emailPresant = users.some((user) => user.email == data.email);
+
+          if (emailPresant) {
+               setFormErrors({ email: "Mail already Exists" })
+               //....
+          } else {
+
+               const addUser = [...users, data];
+               localStorage.setItem("users", JSON.stringify(addUser))
                alert("Registration successful!");
                navigate("/signin");
-          } catch (err) {
-               console.error(err);
           }
      };
 
@@ -92,20 +105,20 @@ const Register: React.FC = () => {
                     <input
                          className='input-field' type='text' name='email' value={data.email} onChange={handleChange}
                          placeholder='Email' />
-                   
+
                     <p>{formErrors.email}</p>
 
                     <input
-                         className='input-field' type='text' name='name' value={data.name} onChange={handleChange} placeholder='Name'/>
+                         className='input-field' type='text' name='name' value={data.name} onChange={handleChange} placeholder='Name' />
                     <p>{formErrors.name}</p>
 
                     <input
-                         className='input-field' type='text' name='phone' value={data.phone} onChange={handleChange} placeholder='Phone Number'/>
-                    
+                         className='input-field' type='text' name='phone' value={data.phone} onChange={handleChange} placeholder='Phone Number' />
+
                     <p>{formErrors.phone}</p>
 
                     <input
-                         className='input-field' type='password' name='password' value={data.password} onChange={handleChange}  placeholder='Password'/>
+                         className='input-field' type='password' name='password' value={data.password} onChange={handleChange} placeholder='Password' />
                     <p>{formErrors.password}</p>
 
                     <button className='btn' type='submit'>Register</button>

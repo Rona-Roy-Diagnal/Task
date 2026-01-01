@@ -4,25 +4,30 @@
     justify-content: center;
     text-align: center;
     height: 100vh;
-     background-position: center; /*starting position of img with container  */
-    background-image: url("/public/background_img.jpg");
+     /* background-position: center; starting position of img with container  */
+    background-image: linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.6)),url("https://assets.nflxext.com/ffe/siteui/vlv3/d13e2d55-5cdd-48c0-a55b-4b292d0b9889/web/IN-en-20251229-TRIFECTA-perspective_d7edcd70-4cfd-441c-858c-c5e400ed6c2b_large.jpg");
     background-size: cover;
     
 }
-h2,p{
-     color: #d8b61a;
-    
+.welcome{
+      background-color: transparent;
+}
+.welcome h2,p{
+     color:white;
+    background-color: transparent;
+
     margin-bottom: 10px;
 }
 
 
 .signup{
    
-     
-    background:linear-gradient(to bottom right,#e1c732,rgba(107, 98, 2, 0.336));
+     border-radius: 3px;
+    background-color: #E50914;
     border: none;
    font-weight: bold;
     margin-bottom: 30px;
     height: 30px;
     width: 180px;
+    color: white;
  }

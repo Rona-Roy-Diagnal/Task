@@ -48,6 +48,20 @@
       "name": "aron",
       "phone": "1234567890",
       "password": "aron"
+    },
+    {
+      "id": "68e5",
+      "email": "neethu@mail.com",
+      "name": "uhuyt",
+      "phone": "8879797979",
+      "password": "hfxtd"
+    },
+    {
+      "id": "51ad",
+      "email": "qwer@mail.com",
+      "name": "qwer",
+      "phone": "1234567890",
+      "password": "qwerty"
     }
   ]
 }

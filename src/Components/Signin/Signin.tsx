@@ -20,18 +20,25 @@ const Signin = () => {
             alert("Enter values");
             return;
         }
-        const out = await axios.get('http://localhost:8000/users', {
-            params: { email: login.email, password: login.password }
+        // const out = await axios.get('http://localhost:8000/users', {
+        //     params: { email: login.email, password: login.password }
 
-        })
-        if (out.data.length > 0) {
-            navigate('/home');
-        } else {
-            alert("Wrong Login credentials");
-        }
-
-        setLogin({ email: "", password: "" });
-        <Link to='/home' replace={true}></Link>
+        // })
+        // if (out.data.length > 0) {
+        //     navigate('/home');
+        // } else {
+        //     alert("Wrong Login credentials");
+        // }
+                 const users = JSON.parse(localStorage.getItem("users") || "[]") as props[]; //.....
+              const emailPresant = users.some((user) => user.email == login.email);
+               const passwordPresant = users.some((user) => user.password == login.password);
+               if(emailPresant&&passwordPresant){
+                      setLogin({ email: "", password: "" });
+                         navigate('/home');
+               }else{
+                alert("Wrong Credentials");
+               }
+      
     }
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
