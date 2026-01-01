@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import './Signin.css';
-import axios from 'axios';
+
 import { useNavigate } from 'react-router-dom';
 
 interface Props {
