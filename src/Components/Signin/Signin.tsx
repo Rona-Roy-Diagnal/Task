@@ -12,11 +12,7 @@ const Signin = () => {
         email: "",
         password: ""
     })
-    const [sign,setSign]=useState<boolean>(false);
-     const handleSignout = () => {
-     localStorage.removeItem('sign');
-    setSign(false)
-  }
+   
     const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
