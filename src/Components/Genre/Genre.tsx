@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import shaka from 'shaka-player';
-
+import './Genre.css';
 import 'shaka-player/dist/controls.css';
 
 const Genre:React.FC = () => {
@@ -63,9 +63,9 @@ async function initPlayer() {
 // }
 
   return (
-    <div>
+    <div className='shaka-video'>
             <video ref={videoElmnt}
-           width="640"
+           
           controls></video>
     </div>
   )
