@@ -15,10 +15,14 @@ const Navbar: React.FC = () => {
   const handleSignin = () => {
     localStorage.setItem('sign','true');
     setSign(true);
+  
+  
 
   }
+    const login=localStorage.getItem("login");
   const handleSignout = () => {
      localStorage.removeItem('sign');
+     localStorage.removeItem('login');
     setSign(false)
   }
   const handleContact=()=>{
@@ -36,7 +40,7 @@ const Navbar: React.FC = () => {
       
       {
          
-       sign   && <Link to='/' replace={true}> <button onClick={handleSignout} className='signin'>LOGOUT</button></Link>
+          login   && <Link to='/' replace={true}> <button onClick={handleSignout} className='signin'>LOGOUT</button></Link>
       }
      </div>
     </div>

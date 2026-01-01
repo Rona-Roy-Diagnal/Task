@@ -13,6 +13,7 @@ const Home: React.FC = () => {
 const handleshaka=()=>{
 navigate('/genre')
 }
+
   return (
     <div className='outer-cont'>
       <div className='home-div'>

@@ -41,11 +41,14 @@ const Signin = () => {
                }
       
     }
+    const handleLogin=()=>{
+        localStorage.setItem("login","true");
+    }
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setLogin((prev) => ({ ...prev, [name]: value }))
     }
-     
+    
     return (
         <div className='outer'>
 
@@ -55,7 +58,7 @@ const Signin = () => {
                 <br />
                 <input className='input-field' type='password' name='password' value={login.password} onChange={handleChange} placeholder='Enter Password'></input>
                 <br />
-                <button className='btn' type='submit'>Login</button>
+                <button onClick={handleLogin} className='btn' type='submit'>Login</button>
                 <div className='register'>
                     <Link to='/register' replace={true}>   <a href='#' >New User? Register Here</a></Link>
                 </div>
