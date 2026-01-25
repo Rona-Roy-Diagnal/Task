@@ -83,12 +83,12 @@ const Register: React.FC = () => {
           // } catch (err) {
           //      console.error(err);
           // }
-          const users = JSON.parse(localStorage.getItem("users") || "[]") as Props[]; //.....
+          const users = JSON.parse(localStorage.getItem("users") || "[]") as Props[];
           const emailPresant = users.some((user) => user.email == data.email);
 
           if (emailPresant) {
                setFormErrors({ email: "Mail already Exists" })
-               //....
+          
           } else {
 
                const addUser = [...users, data];

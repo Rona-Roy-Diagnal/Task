@@ -1,33 +1,33 @@
-.cover{
-   display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh;
-     /* background-position: center; starting position of img with container  */
-    background-image: linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.6)),url("https://assets.nflxext.com/ffe/siteui/vlv3/d13e2d55-5cdd-48c0-a55b-4b292d0b9889/web/IN-en-20251229-TRIFECTA-perspective_d7edcd70-4cfd-441c-858c-c5e400ed6c2b_large.jpg");
-    background-size: cover;
-    
+.cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  /* background-position: center; starting position of img with container  */
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url("netflix.jpg");
+  background-size: cover;
 }
-.welcome{
-      background-color: transparent;
+.welcome {
+  background-color: transparent;
 }
-.welcome h2,p{
-     color:white;
-    background-color: transparent;
+.welcome h2,
+p {
+  color: white;
+  background-color: transparent;
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-
-.signup{
-   
-     border-radius: 3px;
-    background-color: #E50914;
-    border: none;
-   font-weight: bold;
-    margin-bottom: 30px;
-    height: 30px;
-    width: 180px;
-    color: white;
- }
+.signup {
+  border-radius: 3px;
+  background-color: #e50914;
+  border: none;
+  font-weight: bold;
+  margin-bottom: 30px;
+  height: 30px;
+  width: 180px;
+  color: white;
+}

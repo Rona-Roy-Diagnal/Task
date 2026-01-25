@@ -11,6 +11,8 @@ import { movieDetails,movieVideos } from '../../Constant/Url';
 
 
 const Details:React.FC = () => {
+   console.log("details.tsx");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [details,setDetails]=useState<any>(null);
    
     const [uid,setUid]=useState<string|null>(null);

@@ -9,6 +9,8 @@ interface props {
   title:string;
 }
 const ListMovies:React.FC<props>= ({title,url}:props) => {
+   console.log("listmovies.tsx");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [videos, setVideos] = useState<any[]>([]);
    const navigate= useNavigate();
   useEffect(() => {
