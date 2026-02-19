@@ -1,0 +1,46 @@
+
+ .details{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+
+ }
+ .overview {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 5px;
+  }
+ .left-content{
+    margin: 3px;
+ }
+ .movie-img{
+  aspect-ratio: 16/9;
+  border-radius: 5px;
+    margin-bottom: 8px;
+ }
+.right-content{
+margin: 3px;
+margin-top: 22px;
+}
+
+.detail-title {
+  color: #e50914;
+  margin-bottom: 5px;
+}
+.p-name {
+  box-sizing: border-box;
+  color: rgb(169, 173, 190);
+  font-family: FontBase;
+  margin-bottom: 5px;
+}
+.genre-div {
+  white-space: nowrap;
+  display: block;
+  margin-bottom: 5px;
+}
+.desc-label {
+  box-sizing: border-box;
+  color: rgb(169, 173, 190);
+  font-family: FontBase;
+  margin-bottom: 5px;
+}

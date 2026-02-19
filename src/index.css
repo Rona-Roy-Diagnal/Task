@@ -1,5 +1,6 @@
 *{
   margin: 0;
   padding: 0;
-  background-color:#221F1F;
+  background-color:rgb(22,23,29);
+  box-sizing: border-box;
 }

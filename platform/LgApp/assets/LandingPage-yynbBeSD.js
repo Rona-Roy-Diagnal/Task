@@ -1,0 +1,1 @@
+import{j as e}from"./index-B1RH71En.js";const r=()=>e.jsx("div",{className:"cover",children:e.jsxs("div",{className:"welcome",children:[e.jsx("h2",{children:"SEE WHAT'S NEXT."}),e.jsx("p",{children:"WATCH ANYWHERE. CANCEL ANYTIME"})]})});export{r as default};

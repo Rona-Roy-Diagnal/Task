@@ -1,0 +1,43 @@
+
+.vjs-big-play-centered{
+    width: 507px !important;
+height: 321px !important; 
+} 
+.vjs-fluid:not(.vjs-audio-only-mode),
+.video-js.vjs-9-16:not(.vjs-audio-only-mode),
+.vjs_video_671-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
+padding-top: 0 !important;
+}
+ 
+.vjs-9-16 {
+width: 507px !important;
+height: 321px !important; 
+}
+.video-js{
+    display: inline;
+
+}
+.video-js .vjs-tech{
+    position: relative;
+} 
+.video-js button{
+    background-color: black;
+    border-radius: 0;
+}
+.video-js .vjs-progress-control{
+    background-color: black;
+}
+.arrow{
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 3;
+    opacity: 1;
+}
+.arrow.left-arrow{
+    left: 0;
+    top: 0;
+}
+.focused{
+    border: none;
+}
