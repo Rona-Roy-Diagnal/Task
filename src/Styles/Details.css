@@ -2,45 +2,83 @@
  .details{
   display: flex;
   justify-content: space-between;
-  margin: 5px;
+  margin: 10px;
 
  }
  .overview {
     font-size: 16px;
     color: white;
-    margin-bottom: 5px;
+    margin: 8px 8px;
+    background: transparent;
   }
  .left-content{
     margin: 3px;
+      background: transparent;
  }
+  /* .left-content::before{
+   
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.left-content{
+  position: relative;
+}
+   */
  .movie-img{
   aspect-ratio: 16/9;
   border-radius: 5px;
-    margin-bottom: 8px;
+    margin: 8px;
  }
 .right-content{
+  top: 0;
+  left: 8px;
 margin: 3px;
 margin-top: 22px;
+background: transparent;
+z-index: 10;
 }
 
 .detail-title {
   color: #e50914;
-  margin-bottom: 5px;
+  top: 0;
+  margin: 8px ;
+  background: transparent;
 }
 .p-name {
   box-sizing: border-box;
   color: rgb(169, 173, 190);
   font-family: FontBase;
   margin-bottom: 5px;
+    background: transparent;
 }
+
 .genre-div {
   white-space: nowrap;
   display: block;
   margin-bottom: 5px;
+    background: transparent;
 }
 .desc-label {
   box-sizing: border-box;
   color: rgb(169, 173, 190);
   font-family: FontBase;
   margin-bottom: 5px;
+    background: transparent;
+}
+.play-btn{
+  margin: 8px;
+}
+.title-rating{
+    background: transparent;
+}
+.overview-btn{
+    background: transparent;
+}
+.not-available{
+  color: white;
 }

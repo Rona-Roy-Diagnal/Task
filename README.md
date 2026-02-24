@@ -71,3 +71,13 @@ export default defineConfig([
   },
 ])
 ```
+
+# .Flix
+    The appliation .Flix is a smart TV video streaming application that help the user to browse and watch the contents that they can watch on demand. When the app is launched users can see a landing page from where they can move to the home page. Home page contains the content rails. Each item is dispayed as a thumbnail image, so that the user can move on to what he likes by clicking on the image. Selecting a content item goes to details page which displays title, rating, description, genre etc. To watch the video the user is required to login into the application. Once logged in then the user can watch the videos.  
+
+    The Enlight middleware APIs are used for authentication, catalog data, metadata, and playback. The app is packaged  as a static web build for release on Samsung Tizen (.wgt) and LG webOS (.ipk) devices. The app supports remote navigation, focus management, LG magic mouse controls and back-navigation support for TV usage. This react app has a modular structure and is optimized for performance.
+
+    Targeted platforms : Web, Samsung Tizen TV, LG WebOS TV.
+    
+## Tech Stack
+    - React with Typescript 

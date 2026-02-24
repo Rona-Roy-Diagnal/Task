@@ -1,0 +1,44 @@
+.want-div {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  height: 100vh;
+}
+.want-h1 {
+  color: white;
+}
+.want-h3 {
+  color: white;
+}
+.notwant {
+  margin-top: 20px;
+  color: white;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  align-self: center;
+  width: 100%;
+}
+.want {
+  margin-top: 20px;
+  color: white;
+  background: #e50914;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  align-self: center;
+  width: 100%;
+}
+.want-btn {
+  width: 400px;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+ 
+  border: 2px solid #e50914;
+  text-align: center;
+  margin-left: 10px;
+}

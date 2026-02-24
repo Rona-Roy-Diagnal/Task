@@ -1,7 +1,7 @@
 
-const LOGIN_URL = "https://hez88zgdif.execute-api.ap-south-1.amazonaws.com/dev";
-const AuthService = async (username: string, password: string) => {
 
+const LOGIN_URL=import.meta.env.VITE_LOGIN_URL;
+const AuthService = async (username: string, password: string) => {
   const credential = `${username}::${password}`;
   const utf8Bytes = new TextEncoder().encode(credential);
 
@@ -14,6 +14,8 @@ const AuthService = async (username: string, password: string) => {
     method: "POST",
     headers: {
       Authorization: `Basic ${encoded}`,
+      // Origin: 'http://localhost:3000',
+      "Content-Type":"application/json"
     },
     body: JSON.stringify({
       platform: "web",

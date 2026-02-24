@@ -1,6 +1,10 @@
+import { useLocation } from "react-router-dom";
 import VideoService from "../Services/VideoService";
 
 function VideoPlay() {
+
+  const {state}=useLocation();
+  const {details}=state;
   const viddeooptions = {
     autoplay: true,
     controls: true,
@@ -19,13 +23,16 @@ function VideoPlay() {
         src: "https://dclcsthfchz2h.cloudfront.net/de401/ae597794-26f9-4e76-a5f3-fe327fa3afd4/enlight-trailer-new-draft.m3u8",
       },
     ],
-  };
+  }
 
   return (
     <div>
       <VideoService
         options={viddeooptions}
-        onReady={() => {
+        contentId={details.contentGuid}
+        contentTitle={details.title}
+        contentGenre={details.genre}
+         onReady={() => {
           console.log("player ready");
         }}
       ></VideoService>

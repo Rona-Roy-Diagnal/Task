@@ -10,14 +10,29 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
 <link rel="manifest" href="./site.webmanifest">
-  <script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
+   <script type="text/javascript" src="https://cloudfront.loggly.com/js/loggly.tracker-2.2.4.min.js" async></script>
+  <script>
+  window._Ltracker = window._Ltracker || [];
+  window._Ltracker.push({
+    logglyKey: "PASTE_YOUR_REAL_TOKEN_HERE",
+    tag: "force-test"
+  });
 
-    <script type="module" crossorigin src="./assets/index-DO0BnLKi.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Dt8t8-3Y.css">
+  setTimeout(function () {
+    window._Ltracker.push({
+      level: "info",
+      event: "forced_html_log",
+      message: "This is a forced HTML log"
+    });
+  }, 3000);
+</script>
+    <script type="module" crossorigin src="./assets/index-15HUd88Y.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BGLgrqwX.css">
   </head>
   <body>
-    <div id="root"></div>
-
+    <div id="root"></div>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.16.3/shaka-player.compiled.js"></script>
-  </body>
+   
+
+    </body>
 </html>
