@@ -12,7 +12,7 @@
   gap: 25px;
 }
 .heading{
-  font-size: 20px;
+  font-size: 50px;
   font-weight: bold;
 }
 .sign-btn{
@@ -36,10 +36,11 @@
   z-index: 3;
    outline: 3px solid white; 
 }
-.nav-link:hover{
+.navbar-item:hover{
 transform: scale(1.05);
 cursor: pointer;
 }
 .navbar-item{
   cursor: pointer;
+  font-size: 18px;
 }

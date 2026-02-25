@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import {
   useFocusable,
   FocusContext,
+  setFocus,
 } from "@noriginmedia/norigin-spatial-navigation";
 
 
@@ -22,6 +23,7 @@ interface Props {
   title: string;
   isTop10?: boolean;
   isNot10?: boolean;
+  excludeId?:string,
   onFirstCardFocus?: (key: string) => void;
   //  onDataLoaded?:(data:ContentItem[])=>void
 }
@@ -63,6 +65,7 @@ const ListMovies: React.FC<Props> = ({
   genre,
   title,
   isTop10 = false,
+  excludeId,
   onFirstCardFocus,
   // onDataLoaded
 }) => {
@@ -82,9 +85,17 @@ const ListMovies: React.FC<Props> = ({
 
   const { ref: rowRef, focusKey: rowFocusKey} = useFocusable({
     trackChildren: true,
+    onArrowPress:(direction)=>{
+      if(direction=='up' && onFirstCardFocus){
+          setFocus("nav_key");
+         
+      }
+      
+      return false;
+    }
     
   });
-  const dist=300;
+  const dist=900;
   const scrollRef=useRef<HTMLDivElement>(null);
   const [scrolltoLeft,setScrolltoLeft]=useState(false);
   const [scrolltoRight,setScrolltoRight]=useState(false);
@@ -110,18 +121,17 @@ useEffect(()=>{
   // Fetch videos
   useEffect(() => {
 try{
-     fetchContentByGenre(genre).then((data)=>{setVideos(data) })
+     fetchContentByGenre(genre).then((data)=>{
+      const filtered=excludeId?data.filter((item:any)=>item.contentGuid!==excludeId):data;
+      setVideos(filtered) })
 } catch(error:any){
   logApiError("movieList",error.config.data,error.response.data,error.response.status)
 }
    
-//       if(onDataLoaded){
-//         console.log("sending",data)
-//  onDataLoaded(data)
-//       }
+
        
    
-  }, [genre]);
+  }, [genre,excludeId]);
 
 
 

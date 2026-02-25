@@ -87,7 +87,7 @@ const VideoService = ({
     if(options.autoplay!=undefined)
     player.autoplay(options.autoplay)
   if(options.src!=undefined)
-    options.src(options.sources)
+    player.src(options.sources)
      
     }
   }, [options, onReady, contentId, contentTitle, contentGenre]);

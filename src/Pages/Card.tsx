@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useFocusable } from "@noriginmedia/norigin-spatial-navigation";
+import { FocusContext, useFocusable } from "@noriginmedia/norigin-spatial-navigation";
 import { useEffect, useRef } from "react";
 import Useanalytics from "../Hooks/Useanalytics";
 import "../Styles/ListMovies.css"
@@ -77,6 +77,7 @@ const Card = ({
   if (!imageUrl) return null;
 
   return (
+    <FocusContext.Provider value={focusKey}>
     <div
       ref={ref}
       className={`div-horizontal ${isTop10 ? "top10-card" : "normal-card"} ${
@@ -94,7 +95,7 @@ const Card = ({
           <p>{video.overview}</p>
           <button>play</button>
         </div> */}
-    </div>
+    </div></FocusContext.Provider>
   );
 };
 export default Card;

@@ -1,15 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable no-constant-binary-expression */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import "../Styles/Navbar.css";
 import { useNavigate } from "react-router-dom";
-import { useFocusable } from "@noriginmedia/norigin-spatial-navigation";
+import { FocusContext, useFocusable } from "@noriginmedia/norigin-spatial-navigation";
 import { SignOut } from "../Services/AuthService";
 import Useanalytics from "../Hooks/Useanalytics";
 
-interface Props {
+export interface Props {
   onFocusKeyReady?: (key: string) => void;
+  parentKey?:string;
 }
 const Navbar: React.FC<Props> = () => {
   const {Logout}=Useanalytics();
@@ -18,8 +20,10 @@ const Navbar: React.FC<Props> = () => {
 const token=localStorage.getItem("auth_token")
   const navigate = useNavigate();
 const [lock,setLock]=useState(false);
-  
-  const homenav = useFocusable({
+  const {ref,focusKey}=useFocusable({focusKey:"nav_key",
+    onFocus:()=>homenav.focusSelf()
+  })
+  const homenav  = useFocusable({
     focusKey: "home_nav",
     onEnterPress: () => handleHome(),
     onArrowPress: (direction) => {
@@ -42,7 +46,7 @@ const [lock,setLock]=useState(false);
     },
   });
   const handleLogin=()=>{
-  navigate('/signin')
+  navigate('/signin',{replace:true})
   setLock(true)
 }
 
@@ -113,8 +117,8 @@ const handleMovies=()=>{
   const getToken = localStorage.getItem("auth_token");
 
   return (
-    <nav className="navbar">
-   
+    <nav className="navbar" ref={ref}>
+   <FocusContext.Provider value={focusKey}>
       <div className="left-nav">
         <span className="heading">.Flix</span>
        <div
@@ -155,6 +159,7 @@ const handleMovies=()=>{
           </button>
         )}
       </div>
+      </FocusContext.Provider>
     </nav>
   );
 };

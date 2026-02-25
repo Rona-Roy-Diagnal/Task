@@ -28,7 +28,7 @@ const passwordRef=useRef<HTMLInputElement>(null);
       const token= await AuthService(username, password);
        localStorage.setItem("auth_token", token);
       logLogin()
-        navigate("/home");
+        navigate("/home",{replace:true});
         Login();
       } catch (error:any) {
         console.error("login failed", error);

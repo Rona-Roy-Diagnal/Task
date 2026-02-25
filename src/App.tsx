@@ -14,12 +14,14 @@ import { trackAppLaunch } from "./Analytics/AnalyticEvents";
 import { logAppLaunch } from "./Utils/Loggly";
 // import RouterPage from "./Pages/RouterPage";
 import RouterPages from "./Pages/RouterPage";
+import TizenBackButton from "./Services/CustombackServ";
 // import { useNavigate } from "react-router-dom";
 
 
 
 
-init({ debug: false, visualDebug: false });
+init({ debug: true, visualDebug: false });
+
 
 const App: React.FC = () => {
   useEffect(()=>{
@@ -28,6 +30,13 @@ const App: React.FC = () => {
     logAppLaunch();
   
   },[])
+
+
+TizenBackButton();
+ 
+
+
+
    
   const { ref } = useFocusable({
     trackChildren: true

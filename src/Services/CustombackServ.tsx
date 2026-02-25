@@ -1,42 +1,37 @@
-// /* eslint-disable no-constant-binary-expression */
-// /* eslint-disable valid-typeof */
-// /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect } from "react";
 
-// import { useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
+declare global {
+  interface Window {
+    tizen: any;
+  }
+}
+const TizenBackButton = () => {
+  useEffect(() => {
+    const handleBackButton = (e: any) => {
+      // Check if the key is the back button
+      if (e.keyName === 'back') {
+        // Logic for exiting or going back
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          // If no back history, exit application
+          if (window.tizen && window.tizen.application) {
+            window.tizen.application.getCurrentApplication().exit();
+          }
+        }
+      }
+    };
 
+    // Add listener
+    document.addEventListener('tizenhwkey', handleBackButton);
 
-// const CustombackServ = () => {
-//     const navigate=useNavigate();
-//     useEffect(()=>{
-//          const tizenObj=(window as any)['tizen'];
-//          const handleKeyDown=(event:KeyboardEvent)=>{
-//                  if(event.keyCode==10009){
-//                     event.preventDefault();
-//                   if(window.history.length>1)
-//     navigate(-1)
-// else{
-    
-//     if(tizenObj){
-//         tizenObj.application.getCurrentApplication().exit();
-//     }
-// }
-//             }
-//          }
-//          return()=>{
-//                 if(tizenObj){
-//             document.removeEventListener("keydown",handleKeyDown)
-//          }
-//         }
-//     },[navigate])
-   
-   
-  
-// //   return (
-// //     <div>
+    // Cleanup listener
+    return () => {
+      document.removeEventListener('tizenhwkey', handleBackButton);
+    };
+  }, []);
 
-// //     </div>
-// //   )
-// }
-
-// export default CustombackServ
+  return <div>My Tizen App</div>;
+};
+export default TizenBackButton;

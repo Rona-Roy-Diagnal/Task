@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { Suspense, useEffect } from "react";
+import React, {  Suspense, useEffect } from "react";
 import { HashRouter, Route, Routes, useNavigate} from "react-router-dom";
 import WantLogin from "./WantLogin";
+
 
 // import Footer from "./Footer";
 const LandingPage = React.lazy(() => import("./LandingPage"));
 const Signin = React.lazy(() => import("./Signin"));
-const Details = React.lazy(() => import("./Details"));
+const Details = React.lazy(() => import("./DetailParent"));
 const Home = React.lazy(() => import("./Home"));
 const Navbar = React.lazy(() => import("./Navbar"));
 const VideoPlay = React.lazy(() => import("./VideoPlay"));
@@ -19,8 +20,8 @@ const RouterPages: React.FC = () => {
 const navigate=useNavigate();
     useEffect(()=>{
          const tizenObj=(window as any)['tizen'];
-         const handleKeyDown=(event:KeyboardEvent)=>{
-                 if(event.keyCode==10009){
+         const handleKeyDown=(event:any)=>{
+                 if(event.keyName=='back'){
                     event.preventDefault();
                   if(window.history.length>1)
     navigate(-1)
@@ -40,13 +41,14 @@ else{
     },[navigate])
    
   // const hideNavBool = location.pathname.startsWith("/videoplay");
- // const hideNavLogin = location.pathname.startsWith("/signin");
+//  const hideNavLogin = location.pathname.startsWith("/signin");
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        {/* {!hideNavBool && <Navbar key="videoplay-nav"/>}
-         */}
+        {/* {!hideNavLogin && <Navbar key="videoplay-nav"/>} */}
+       
         <Routes>
+       
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/navbar" element={<Navbar/>}></Route>
           <Route path="/signin" element={<Signin />}></Route>

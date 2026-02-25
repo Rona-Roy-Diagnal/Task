@@ -1,17 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// const _Ltracker:any[]=(window as any)._Ltracker||[];
-// _Ltracker.push({
-//     logglyKey:"2b674e01-291c-4e4b-a5e8-549cf7d2575c",
-//     sendConsoleErrors:false,
-//     tag:"react-tv-app"
-// });
-// _Ltracker.push({
-//     level:"info",
-//     event:"confir",
-//     message:"success"
-// });
-// (window as any)._Ltracker=_Ltracker;
-
 import logger from "./Logger";
 
 export type LogLevel="INFO"|"ERROR";
@@ -27,8 +14,6 @@ export const logAppLaunch=()=>{
         module:"General"
     })
 }
-
-
 export const logLogin=()=>{
     logEvent("INFO","_login.success",{
         module:"Authetication",
@@ -70,7 +55,7 @@ export const logPlaybackError=(contentTitle:string,playerEvent:"play"|"pause"|"s
 }
 
 
-export const logApiError=(module:string,requestBody?:any,responseCode?:number,responseBody?:any)=>{
+export const logApiError=(module:string,requestBody?:any,responseCode?:number,responseBody?:string)=>{
     logEvent("ERROR","_api.error",{
         module,requestBody,responseCode,responseBody
     })
