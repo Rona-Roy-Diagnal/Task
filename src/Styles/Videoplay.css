@@ -51,20 +51,3 @@ height: 321px !important;
 .focused{
     border: none;
 }
- /* .video-js .vjs-big-play-button {
-            line-height: inherit; */
-            /* height: 3em; you can set a new height */
-/* 
-            margin-top: unset;
-            margin-left: unset;
-            transform: translate(-50%, -50%); 
-        }
-        .video-js .vjs-big-play-button .vjs-icon-placeholder::before {
-            position: inherit;
-            top: unset;
-            left: unset;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-         */

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   color: #E50914;
-  padding: 14px 32px;
+  padding: 2vh 3vw;
   height: 60px;
 }
 .left-nav{
@@ -14,8 +14,9 @@
 .heading{
   font-size: 50px;
   font-weight: bold;
+  color: #E50914;
 }
-.sign-btn{
+.login-btn{
   padding: 8px 18px;
   background-color: #E50914;
   border: none;
@@ -44,3 +45,8 @@ cursor: pointer;
   cursor: pointer;
   font-size: 18px;
 }
+
+.login-btn:hover{
+  transform: scale(1.1);
+}
+

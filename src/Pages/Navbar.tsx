@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable no-constant-binary-expression */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import "../Styles/Navbar.css";
@@ -8,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { FocusContext, useFocusable } from "@noriginmedia/norigin-spatial-navigation";
 import { SignOut } from "../Services/AuthService";
 import Useanalytics from "../Hooks/Useanalytics";
+import UseSingleNav from "../Hooks/UseSingleNav";
 
 export interface Props {
   onFocusKeyReady?: (key: string) => void;
@@ -15,13 +14,18 @@ export interface Props {
 }
 const Navbar: React.FC<Props> = () => {
   const {Logout}=Useanalytics();
-  // const location=useLocation();
-  // const hide=location.pathname.startsWith('/signin'||'/videoplay'||'/')
+ const safe=UseSingleNav()
 const token=localStorage.getItem("auth_token")
   const navigate = useNavigate();
 const [lock,setLock]=useState(false);
   const {ref,focusKey}=useFocusable({focusKey:"nav_key",
-    onFocus:()=>homenav.focusSelf()
+    onFocus:()=>{logoutnav.focusSelf()
+    
+    ref.current.scrollIntoView({
+        behaviour: "smooth",
+        block: "nearest"
+      })
+    }
   })
   const homenav  = useFocusable({
     focusKey: "home_nav",
@@ -46,7 +50,7 @@ const [lock,setLock]=useState(false);
     },
   });
   const handleLogin=()=>{
-  navigate('/signin',{replace:true})
+ safe('/signin')
   setLock(true)
 }
 
@@ -58,13 +62,13 @@ const handleLogout=()=>{
       
 }
 const handleKids=()=>{
-  token?navigate("/kids"):navigate('/signin');
+  token?safe('/kids'):navigate('/signin');
 }
 const handleHome=()=>{
-  token?navigate("/home"):navigate('/signin')
+  token?safe('/home'):navigate('/signin')
 }
 const handleMovies=()=>{
- token?navigate("/movies"):navigate('/signin')
+ token?safe('/movies'):navigate('/signin')
 }
   const kidsnav = useFocusable({
     focusKey: "kids_nav",
@@ -145,17 +149,17 @@ const handleMovies=()=>{
           <button
             key={loginnav.focusKey}
             ref={loginnav.ref}
-            className={`navbar-item ${loginnav.focused ? "focused" : ""}`}onClick={handleLogin} disabled={lock}
+            className={`login-btn ${loginnav.focused ? "focused" : ""}`}onClick={handleLogin} disabled={lock}
           >
-            Login
+            Log in
           </button>
         ) : (
           <button
             key={logoutnav.focusKey}
             ref={logoutnav.ref}
-            className={`navbar-item ${logoutnav.focused ? "focused" : ""}`}onClick={handleLogout}
+            className={`login-btn ${logoutnav.focused ? "focused" : ""}`}onClick={handleLogout}
           >
-            LogOut
+            Log out
           </button>
         )}
       </div>

@@ -7,7 +7,7 @@ let initialized=false;
 export const initanalytic=()=>{
     if(!token ||initialized) return;
     mixpanel.init(token,{
-        debug:true,
+        debug:false,
         track_pageview:false,
         persistence:"localStorage"
     });

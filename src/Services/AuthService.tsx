@@ -5,10 +5,10 @@ const AuthService = async (username: string, password: string) => {
   const credential = `${username}::${password}`;
   const utf8Bytes = new TextEncoder().encode(credential);
 
-  // Convert the Uint8Array to binary string where each character is a single byte
+  // convert the Uint8Array to binary string where each character is a single byte
   const binaryString = String.fromCharCode(...utf8Bytes);
 
-  // Encode the binary string using btoa()
+  // encode the binary string using btoa()
   const encoded = btoa(binaryString);
   const res = await fetch(`${LOGIN_URL}/account/login`, {
     method: "POST",

@@ -8,7 +8,7 @@ const Kids = () => {
           <Suspense fallback={<div className='lazy-div'>Loading...</div>}>
                  
               
-                <LazyComponent title='MARVEL : SPIDERMAN' genre='SPIDER-VERSE' isTop10={true}/>
+                <LazyComponent title='SPIDERMAN : TOP 10' genre='SPIDER-VERSE' isTop10={true}/>
                 <LazyComponent title='TOP RATED' genre='KIDS-AND-FAMILY'/>
                </Suspense>
        </div>

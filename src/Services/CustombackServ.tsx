@@ -9,9 +9,9 @@ declare global {
 const TizenBackButton = () => {
   useEffect(() => {
     const handleBackButton = (e: any) => {
-      // Check if the key is the back button
+      // check if the key is the back button
       if (e.keyName === 'back') {
-        // Logic for exiting or going back
+        // logic for exiting or going back
         if (window.history.length > 1) {
           window.history.back();
         } else {
@@ -23,10 +23,10 @@ const TizenBackButton = () => {
       }
     };
 
-    // Add listener
+    // add listener
     document.addEventListener('tizenhwkey', handleBackButton);
 
-    // Cleanup listener
+    // cleanup listener
     return () => {
       document.removeEventListener('tizenhwkey', handleBackButton);
     };

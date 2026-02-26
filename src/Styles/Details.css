@@ -15,24 +15,26 @@
     margin: 3px;
       background: transparent;
  }
-  /* .left-content::before{
-   
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3);
-}
-.left-content{
-  position: relative;
-}
-   */
+
  .movie-img{
   aspect-ratio: 16/9;
   border-radius: 5px;
     margin: 8px;
+ }
+ .trailer-img{
+  aspect-ratio: 16/9;
+  border-radius: 5px;
+    margin: 8px;
+    height: 200px;
+    width: 300px;
+       margin: 8px 8px;
+ }
+ .trailer-div{
+     margin: 10px;
+ }
+ .trailer-head{
+  color: white;
+     margin: 5px;
  }
 .right-content{
   top: 0;
@@ -72,6 +74,9 @@ z-index: 10;
 }
 .play-btn{
   margin: 8px;
+}
+.play-btn:hover{
+  transform: scale(1.1);
 }
 .title-rating{
     background: transparent;

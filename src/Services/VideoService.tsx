@@ -11,7 +11,6 @@ import "../Styles/Videoplay.css";
 import { setFocus, useFocusable } from "@noriginmedia/norigin-spatial-navigation";
 import useAnalytics from "../Hooks/Useanalytics";
 import { logPlaybackError, logPlaybackSuccess } from "../Utils/Loggly";
-// import { logPlaybackError, logPlaybackSuccess } from "../Utils/Logger";
 
 interface VideoServiceProps {
   options:any;
@@ -77,6 +76,7 @@ const VideoService = ({
               contentTitle,
               errorMsg: error?.message ?? "Unknown error",
             });
+            console.log(error?.code)
             logPlaybackError(contentTitle,"play",error);
           });
         }

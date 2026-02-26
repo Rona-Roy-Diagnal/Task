@@ -16,7 +16,7 @@ const LandingPage: React.FC = () => {
     token?navigate('/home'):navigate('/signin')
   }
   return (
-    <div  className="cover" style={{backgroundImage:" linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url(/netflix.jpg)"}}>
+    <div  className="cover" style={{backgroundImage:" linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),url('/netflix.jpg')"}}>
       <div className="welcome">
         <h1>.FLIX</h1>
         <h2>SEE WHAT'S NEXT.</h2>

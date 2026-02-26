@@ -1,18 +1,31 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
+import react from '@vitejs/plugin-react-swc'
+import babel from 'vite-plugin-babel';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()]
-  // server:{
-  //   proxy:{
-  //     "/api":{
-  //       target:"https://api-entertainment-v1.enlight.diagnal.com",
-  //       changeOrigin:true,
-  //       secure:true,
-  //       rewrite:(path)=>path.replace(/^\/api/,""),
-  //     },
-  //   },
-  // },
+  plugins: [react(),
+  babel({
+    babelConfig: {
+      plugins: ['babel-plugin-react-compiler'],
+    },
+  }),],
+  base: './',
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    sourcemap: 'inline',
+    minify: true,
+    cssMinify: true,
+    cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+        inlineDynamicImports: true,
+        entryFileNames: `assets/scripts.js`,
+        assetFileNames: `assets/styles.css`,
+      },
+
+    }
+  }
 })

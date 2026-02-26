@@ -13,8 +13,6 @@ interface CardProps {
 
   onEnter: (id: string) => void;
   onFocusKeyReady: (key: string) => void;
-  // isFirst: boolean;
-  // isLast: boolean;
   isAbsoluteFirst: boolean;
   isAbsoluteLast: boolean;
   rowTitle: string; 
@@ -27,8 +25,6 @@ const Card = ({
  
   onEnter,
   onFocusKeyReady,
-  // isFirst,
-  // isLast,
   isAbsoluteFirst,
   isAbsoluteLast,
   
@@ -64,16 +60,15 @@ const Card = ({
   });
 
   const refer = useRef<HTMLHeadingElement>(null);
-  // const divWidth=ref.current?ref.current.offsetWidth:0;
-  // const imgdivWidth=refer.current?refer.current.offsetWidth:0;
+
   useEffect(() => {
     if (focusKey && index === 0 && onFocusKeyReady)
        onFocusKeyReady(focusKey);
   }, [focusKey, index, onFocusKeyReady]);
 
-  const imageUrl = isTop10? video?.images?.[5]?.url || video?.trailers?.[0]?.images?.[5]?.url
+  const imageLink = isTop10? video?.images?.[5]?.url || video?.trailers?.[0]?.images?.[5]?.url
     : video?.images?.[7]?.url || video?.trailers?.[0]?.images?.[7]?.url;
-
+const imageUrl=imageLink?imageLink:"/notfound.png"
   if (!imageUrl) return null;
 
   return (
@@ -89,12 +84,6 @@ const Card = ({
       <div className="image-wrapper" ref={refer}>
         <img src={imageUrl} className="video-img" alt={video.title} loading="lazy" />
       </div>
-
-      {/* <div className='popup'> 
-          <h4>{video.title}</h4>
-          <p>{video.overview}</p>
-          <button>play</button>
-        </div> */}
     </div></FocusContext.Provider>
   );
 };
