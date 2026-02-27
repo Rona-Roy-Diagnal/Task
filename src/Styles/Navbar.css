@@ -9,7 +9,7 @@
 .left-nav{
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
 }
 .heading{
   font-size: 50px;

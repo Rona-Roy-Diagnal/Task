@@ -14,6 +14,7 @@ export interface Props {
 }
 const Navbar: React.FC<Props> = () => {
   const {Logout}=Useanalytics();
+  
  const safe=UseSingleNav()
   const navigate = useNavigate();
 const [lock,setLock]=useState(false);
@@ -57,7 +58,7 @@ const handleLogout=()=>{
    SignOut();
       navigate("/",{replace:true});
       Logout();
-      loginnav.focusSelf();
+    
       
 }
 const handleKids=()=>{

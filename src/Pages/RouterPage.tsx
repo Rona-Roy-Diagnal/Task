@@ -43,7 +43,7 @@ const RouterPages: React.FC = () => {
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/navbar" element={<Navbar />}></Route>
           <Route path="/signin" element={<Signin />}></Route>
-          <Route path="/home" element={<Home />}></Route>
+         <Route path="/home" element={<Home />}></Route>
           <Route path="/details/:id" element={<Details />}></Route>
           <Route path="/movies" element={<Movies />}></Route>
           <Route path="/kids" element={<Kids />}></Route>

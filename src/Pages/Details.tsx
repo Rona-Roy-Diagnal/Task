@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import "../Styles/Details.css";
 import {
   setFocus,
@@ -29,12 +30,12 @@ const Details: React.FC = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { contentSelect } = Useanalytics();
-  
+  const token=localStorage.getItem("auth_token");
 
   const handlePlay = () => {
-    navigate("/videoplay", {
+    token?navigate("/videoplay",{
       state: { details },
-    });
+    }):navigate('/signin');
   };
   const videoBtn = useFocusable({
     focusKey: "video_btn",

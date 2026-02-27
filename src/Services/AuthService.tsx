@@ -14,7 +14,7 @@ const AuthService = async (username: string, password: string) => {
     method: "POST",
     headers: {
       Authorization: `Basic ${encoded}`,
-      // Origin: 'http://localhost:3000',
+       Origin: 'http://localhost:3000',
       "Content-Type":"application/json"
     },
     body: JSON.stringify({

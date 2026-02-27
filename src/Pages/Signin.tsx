@@ -27,8 +27,9 @@ const Signin: React.FC = () => {
       try {
         const token = await AuthService(username, password);
         localStorage.setItem("auth_token", token);
+      
         logLogin();
-        navigate("/home",{replace:true});
+        navigate("/home",{replace:true})
         Login();
       } catch (error: any) {
         console.error("login failed", error);
