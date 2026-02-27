@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect } from "react";
 import "./App.css";
-// import RouterPage from "./Pages/RouterPage";
-
-
 import {
   FocusContext,
   init,
@@ -12,41 +9,28 @@ import {
 import { initanalytic } from "./Analytics/Analytics";
 import { trackAppLaunch } from "./Analytics/AnalyticEvents";
 import { logAppLaunch } from "./Utils/Loggly";
-// import RouterPage from "./Pages/RouterPage";
+
 import RouterPages from "./Pages/RouterPage";
 import TizenBackButton from "./Services/CustombackServ";
-// import { useNavigate } from "react-router-dom";
 
-
-
-
-init({ debug: true, visualDebug: false });
-
+init({ debug: false, visualDebug: false });
 
 const App: React.FC = () => {
-  useEffect(()=>{
+  useEffect(() => {
     initanalytic();
     trackAppLaunch();
     logAppLaunch();
-  
-  },[])
+  }, []);
 
+  TizenBackButton();
 
-TizenBackButton();
- 
-
-
-
-   
   const { ref } = useFocusable({
-    trackChildren: true
+    trackChildren: true,
   });
   return (
     <div ref={ref}>
       <FocusContext.Provider value="SN:ROOT">
-       
-    
-     <RouterPages />
+        <RouterPages />
       </FocusContext.Provider>
     </div>
   );

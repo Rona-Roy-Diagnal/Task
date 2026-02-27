@@ -1,6 +1,3 @@
-
-
-
 import { API } from "../Utils/apis"
 import APIService from "./APIService"
 
