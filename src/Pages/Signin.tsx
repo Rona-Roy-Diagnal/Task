@@ -8,7 +8,9 @@ import { useFocusable } from "@noriginmedia/norigin-spatial-navigation";
 import Useanalytics from "../Hooks/Useanalytics";
 
 import { logLogin, logLoginFail } from "../Utils/Loggly";
-import UseSingleNav from "../Hooks/UseSingleNav";
+// import UseSingleNav from "../Hooks/UseSingleNav";
+import { useNavigate } from "react-router-dom";
+
 
 const Signin: React.FC = () => {
   const [username, setUsername] = useState<string>("");
@@ -16,7 +18,7 @@ const Signin: React.FC = () => {
   const [error, setError] = useState<string>("");
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const navigate = UseSingleNav();
+  const navigate = useNavigate();
   const { Login } = Useanalytics();
 
   const loginBtn = useFocusable({
@@ -26,7 +28,7 @@ const Signin: React.FC = () => {
         const token = await AuthService(username, password);
         localStorage.setItem("auth_token", token);
         logLogin();
-        navigate("/home");
+        navigate("/home",{replace:true});
         Login();
       } catch (error: any) {
         console.error("login failed", error);

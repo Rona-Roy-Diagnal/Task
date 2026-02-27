@@ -15,7 +15,6 @@ export interface Props {
 const Navbar: React.FC<Props> = () => {
   const {Logout}=Useanalytics();
  const safe=UseSingleNav()
-const token=localStorage.getItem("auth_token")
   const navigate = useNavigate();
 const [lock,setLock]=useState(false);
   const {ref,focusKey}=useFocusable({focusKey:"nav_key",
@@ -56,19 +55,19 @@ const [lock,setLock]=useState(false);
 
 const handleLogout=()=>{
    SignOut();
-      navigate("/");
+      navigate("/",{replace:true});
       Logout();
       loginnav.focusSelf();
       
 }
 const handleKids=()=>{
-  token?safe('/kids'):navigate('/signin');
+  safe('/kids');
 }
 const handleHome=()=>{
-  token?safe('/home'):navigate('/signin')
+safe('/home')
 }
 const handleMovies=()=>{
- token?safe('/movies'):navigate('/signin')
+ safe('/movies')
 }
   const kidsnav = useFocusable({
     focusKey: "kids_nav",
