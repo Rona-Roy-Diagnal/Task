@@ -81,7 +81,7 @@ const Signin: React.FC = () => {
     >
       <h2>Login to Continue</h2>
       <form className="inp-form">
-        <div ref={usernameFocus.ref}>
+        <div className="inp-div"ref={usernameFocus.ref}>
           <input
             ref={usernameRef}
             className={`inp ${usernameFocus.focused ? "focused" : ""}`}
@@ -92,7 +92,7 @@ const Signin: React.FC = () => {
             placeholder="username"
           ></input>
         </div>
-        <div ref={passwordFocus.ref}>
+        <div  className="inp-div" ref={passwordFocus.ref}>
           <input
             ref={passwordRef}
             className={`inp ${passwordFocus.focused ? "focused" : ""}`}

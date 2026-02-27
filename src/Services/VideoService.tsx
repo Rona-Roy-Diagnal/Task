@@ -101,13 +101,13 @@ const VideoService = ({
     else playerRef.current.pause();
   }, [playvideo.focused]);
 
- 
+ //play or pause
   const togglePlay = () => {
     if (!playerRef.current) return;
     if (playerRef.current.paused()) playerRef.current.play();
     else playerRef.current.pause();
   };
-
+//skip video
   
   const skip = (seconds: number) => {
     if (!playerRef.current) return;

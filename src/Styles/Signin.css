@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: transparent;
+  background: transparent;
   padding: 4vw;
   box-sizing: border-box;
 }
@@ -24,7 +24,7 @@
   color: white;
   padding: 4vw;
   margin: 1vh;
-  background-color: transparent;
+  background: transparent;
   border: 0.3vw solid #E50914;
   border-radius: 1vw;
   text-align: center;
@@ -39,7 +39,7 @@
   width: 100%;
   border-radius: 0.5vw;
   font-size: 1.5vw;
-  background: rgba(0, 0, 0, 0.4);
+  
   box-sizing: border-box;
 }
 
@@ -58,7 +58,9 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
+.inp-div{
+  background: transparent;
+}
 .login-button:hover {
   
  
