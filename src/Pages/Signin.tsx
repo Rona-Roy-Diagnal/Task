@@ -107,7 +107,7 @@ const handleLogin=async()=>{
           ></input>
         </div>
         {error && <div className="error">{error}</div>}
-        <button
+        <button type="button"
           ref={loginBtn.ref}
           className={`login-button ${loginBtn.focused ? "focused" : ""}`} onClick={handleLogin}
         >
