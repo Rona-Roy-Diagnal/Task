@@ -8,7 +8,6 @@ import { useFocusable } from "@noriginmedia/norigin-spatial-navigation";
 import Useanalytics from "../Hooks/Useanalytics";
 
 import { logLogin, logLoginFail } from "../Utils/Loggly";
-// import UseSingleNav from "../Hooks/UseSingleNav";
 import { useNavigate } from "react-router-dom";
 
 
@@ -20,11 +19,8 @@ const Signin: React.FC = () => {
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
   const { Login } = Useanalytics();
-
-  const loginBtn = useFocusable({
-    focusKey: "login_btn",
-    onEnterPress: async () => {
-      try {
+const handleLogin=async()=>{
+ try {
         const token = await AuthService(username, password);
         localStorage.setItem("auth_token", token);
       
@@ -38,7 +34,11 @@ const Signin: React.FC = () => {
       }
       setUsername("");
       setPassword("");
-    },
+    }
+
+  const loginBtn = useFocusable({
+    focusKey: "login_btn",
+    onEnterPress: handleLogin
   });
   //  const {ref}=useFocusable({focusKey:"login_focus",focusable:true})
   const usernameFocus = useFocusable({
@@ -109,7 +109,7 @@ const Signin: React.FC = () => {
         {error && <div className="error">{error}</div>}
         <button
           ref={loginBtn.ref}
-          className={`login-button ${loginBtn.focused ? "focused" : ""}`}
+          className={`login-button ${loginBtn.focused ? "focused" : ""}`} onClick={handleLogin}
         >
           Login
         </button>
