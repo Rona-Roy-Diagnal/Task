@@ -29,7 +29,7 @@ const Signin: React.FC = () => {
         localStorage.setItem("auth_token", token);
       
         logLogin();
-        navigate("/home",{replace:true})
+        navigate("/home")
         Login();
       } catch (error: any) {
         console.error("login failed", error);

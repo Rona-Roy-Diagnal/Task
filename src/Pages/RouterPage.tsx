@@ -2,6 +2,8 @@
 import React, { Suspense, useEffect } from "react";
 import { HashRouter, Route, Routes, useNavigate } from "react-router-dom";
 import WantLogin from "./WantLogin";
+import LoginRoute from "./LoginRoute";
+import PrivateRoute from "./PrivateRoute";
 
 // import Footer from "./Footer";
 const LandingPage = React.lazy(() => import("./LandingPage"));
@@ -42,8 +44,12 @@ const RouterPages: React.FC = () => {
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/navbar" element={<Navbar />}></Route>
-          <Route path="/signin" element={<Signin />}></Route>
-         <Route path="/home" element={<Home />}></Route>
+          <Route path="/signin" element={<LoginRoute>
+            <Signin></Signin>
+          </LoginRoute>}></Route>
+         <Route path="/home" element={<PrivateRoute>
+          <Home/>
+         </PrivateRoute>}></Route>
           <Route path="/details/:id" element={<Details />}></Route>
           <Route path="/movies" element={<Movies />}></Route>
           <Route path="/kids" element={<Kids />}></Route>
