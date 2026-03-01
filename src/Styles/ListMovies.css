@@ -44,7 +44,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
   border-radius: 0.6vw;
   background: transparent;
   padding: 1%;
@@ -65,9 +64,11 @@
 .normal-row .div-horizontal {
   flex: 0 0 auto;
   width: 24%;
-  margin: 0.6vw;
+  margin: 0.2vw;
   aspect-ratio: 16/9;
   background: transparent;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .normal-card .video-img {
@@ -94,7 +95,33 @@
   align-items: center;
   background: transparent;
 }
-
+.to10-card .has-rank{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.top10-card.has-rank .top10-rank{
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.top10-card.has-rank .video-img{
+  flex: 0 0 70%;
+}
+.top10-card.no-rank{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2vw;
+}
+.top10-card.no-rank .top10-rank{
+  display: none;
+}
+.top10-card.no-rank .video-img{
+  flex: 0 0 100%;
+  object-position: center;
+}
 .top10-rank {
   flex: 0 0 30%;
 
@@ -117,7 +144,7 @@
   flex: 0 0 auto;
   width: 18vw;
  
-  margin: 1% 1%;
+  margin: 0.5vw 0.3vw;
   background: transparent;
 }
 
@@ -202,4 +229,29 @@
 
 .popup {
   display: none;
+}
+.card-title {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5vw 0.8vw 0.8vw 0.8vw;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+  color: white;
+  font-size: 1.5vw;
+  font-family: 'poppins', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  border-bottom-left-radius: 0.6vw;
+  border-bottom-right-radius: 0.6vw;
+  pointer-events: none;
+  z-index: 20;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  transition: opacity 0.3s ease-in-out;
+}
+.focused .card-title,
+.normal-card:hover .card-title,
+.top10-card:hover .card-title {
+  opacity: 1;
 }

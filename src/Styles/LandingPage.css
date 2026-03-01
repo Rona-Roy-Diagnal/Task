@@ -1,39 +1,51 @@
+
 .cover {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100%;
-
+  height: 100vh;
+  width: 100%;
 }
+
 .welcome {
   background-color: transparent;
+  width: 100%;
+  padding: 4%;
+  box-sizing: border-box;
 }
+
 .welcome h2,
 p {
   color: white;
   background-color: transparent;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 2vh;
+  font-size: 2vw;
+}
 
-  margin-bottom: 10px;
-}
-.welcome h1{
+.welcome h1 {
   color: #E50914;
-  font-size: 90px;
+  font-size: 5vw;
   background: transparent;
+  font-family: fantasy;
+  margin-bottom: 3vh;
 }
-.signup {
-  border-radius: 3px;
-  background-color: #e50914;
-  border: none;
+
+.start {
+  font-size: 1.5vw;
   font-weight: bold;
-  margin-bottom: 30px;
-  height: 30px;
-  width: 180px;
+  border: none;
   color: white;
+  cursor: pointer;
+  padding: 2vh 4vw;
+  margin-top: 2vh;
 }
-.focused{
- 
-  transition: transform 0.2s,outline 0.2s;
+
+
+
+.focused {
+  transition: transform 0.2s, outline 0.2s;
   z-index: 3;
-  outline: 3px solid white;
+  outline: 0.3vw solid white;
 }

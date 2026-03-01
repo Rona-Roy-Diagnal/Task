@@ -10,23 +10,13 @@ import {
 } from "@noriginmedia/norigin-spatial-navigation";
 import Useanalytics from "../Hooks/Useanalytics";
 import { fetchContentDetails } from "../Services/ContentService";
+import { setFirstFocusable } from "../Utils/FocusStore";
 
 //details of movie
 const Details: React.FC = () => {
   const [details, setDetails] = useState<any>(null);
-  const imagebtn = useFocusable({
-    focusKey: "image_btn",
-    onFocus: () => {
-      imagebtn.focusSelf();
-    },
-    onEnterPress: () => handlePlay(),
-    onArrowPress: (direction) => {
-      if (direction == "up") {
-        setFocus("video_btn");
-      }
-      return false;
-    },
-  });
+  const [loading,setLoading]=useState<boolean>(true);
+  
   const { id } = useParams();
   const navigate = useNavigate();
   const { contentSelect } = Useanalytics();
@@ -50,9 +40,7 @@ const Details: React.FC = () => {
     onArrowPress: (direction) => {
       if (direction == "up") {
         setFocus("nav_key");
-      } else if (direction == "down") {
-        setFocus("image_btn");
-      }
+      } 
       return false;
     },
   });
@@ -60,15 +48,33 @@ const Details: React.FC = () => {
   
   useEffect(() => {
     if (id == undefined) return;
-
-    fetchContentDetails(id).then(setDetails);
-    videoBtn.focusSelf();
+    const load=async()=>{
+      try{
+        setLoading(true);
+        const data=await fetchContentDetails(id)
+        setDetails(data);
+      }
+      catch{
+        setDetails(null);
+      }
+      finally{
+        setLoading(false);
+      }
+    }
+  
+    load()
+    setFirstFocusable("video_btn")
+  //  videoBtn.ref.current?.focus();
   }, [id]);
+
   const detaiRef = useFocusable({
     onFocus: () => {
       videoBtn.focusSelf();
     },
   });
+  if(loading){
+    return <div className="loading">Loading ...</div>
+  }
   if (!details) {
     return <p className="not-available"> Currently Not Available</p>;
   }
@@ -77,15 +83,19 @@ const Details: React.FC = () => {
     details?.trailers?.[0]?.images?.[0]?.url || details?.images?.[0]?.url;
 
   const imageUrl = imageLink ? imageLink : "/notfound.png";
+   const posterLink =
+    details?.trailers?.[0]?.images?.[1]?.url || details?.images?.[1]?.url; 
+  const posterUrl = posterLink ? posterLink : "/notfound.png";
   if (!imageUrl) return null;
 
   return (
     <div ref={detaiRef.ref}>
-      <div className="details">
+      <div className="details" style={{ backgroundImage: `url(${imageUrl})` }}>
+        <div className="details-overlay">
         <div className="left-content">
           <img
-            className="movie-img"
-            src={imageUrl}
+            className="poster-img"
+            src={posterUrl}
             loading="lazy"
             alt={details.title}
           ></img>
@@ -123,6 +133,7 @@ const Details: React.FC = () => {
               Play video
             </button>
           </div>
+        </div>
         </div>
       </div>
     </div>

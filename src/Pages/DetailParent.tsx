@@ -4,8 +4,9 @@ import Navbar from './Navbar'
 import Details from './Details'
 
 
+
 const DetailParent = () => {
-    const {ref,focusKey}=useFocusable({trackChildren:true})
+    const {ref,focusKey}=useFocusable({trackChildren:true,isFocusBoundary:true})
   return (
     <div ref={ref}>
         <FocusContext.Provider value={focusKey}>

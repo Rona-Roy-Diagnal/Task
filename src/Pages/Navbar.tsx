@@ -7,10 +7,10 @@ import { FocusContext, useFocusable } from "@noriginmedia/norigin-spatial-naviga
 import { SignOut } from "../Services/AuthService";
 import Useanalytics from "../Hooks/Useanalytics";
 import UseSingleNav from "../Hooks/UseSingleNav";
-
+import { MdHome, MdLocalMovies, MdChildCare } from "react-icons/md";
 export interface Props {
   onFocusKeyReady?: (key: string) => void;
-  parentKey?:string;
+ 
 }
 const Navbar: React.FC<Props> = () => {
   const {Logout}=Useanalytics();
@@ -124,24 +124,30 @@ const handleMovies=()=>{
     <nav className="navbar" ref={ref}>
    <FocusContext.Provider value={focusKey}>
       <div className="left-nav">
-        <span className="heading">.Flix</span>
+        <span className="heading">.FLIX</span>
+         <div className="nav-items">
        <div
           ref={homenav.ref}
           className={`navbar-item ${homenav.focused ? "focused" : ""}`} onClick={handleHome}
         >
-          Home
+           <MdHome size={28} />
+              <span className="nav-title">Home</span>
+            
         </div>
         <div
           ref={movienav.ref}
           className={`navbar-item ${movienav.focused ? "focused" : ""}`} onClick={handleMovies}
         >
-          Movies
+          <MdLocalMovies size={28} />
+              <span className="nav-title">Movies</span>
         </div>
          <div
           ref={kidsnav.ref}
           className={`navbar-item ${kidsnav.focused ? "focused" : ""}`} onClick={handleKids}
         >
-          Kids
+          <MdChildCare size={28} />
+              <span className="nav-title">Kids</span>
+        </div>
         </div>
       </div>
       <div className="right-nav">

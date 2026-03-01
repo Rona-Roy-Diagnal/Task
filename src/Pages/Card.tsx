@@ -10,7 +10,7 @@ interface CardProps {
   index: number;
    rank: number;
   isTop10: boolean;
-
+showRank?:boolean;
   onEnter: (id: string) => void;
   onFocusKeyReady: (key: string) => void;
   isAbsoluteFirst: boolean;
@@ -22,7 +22,7 @@ const Card = ({
   index,
    rank,
   isTop10,
- 
+ showRank,
   onEnter,
   onFocusKeyReady,
   isAbsoluteFirst,
@@ -75,14 +75,15 @@ const imageUrl=imageLink?imageLink:"/notfound.png"
     <FocusContext.Provider value={focusKey}>
     <div
       ref={ref}
-      className={`div-horizontal ${isTop10 ? "top10-card" : "normal-card"} ${
+      className={`div-horizontal ${isTop10 ?showRank? "top10-card has-rank":"top10-card no-rank" : "normal-card"} ${
         focused ? "focused" : ""
       }`}
       onClick={() => onEnter(video.contentGuid)}
     >
-      {isTop10 && <div className="top10-rank">{rank}</div>}
+      {showRank && <div className="top10-rank">{rank}</div>}
       <div className="image-wrapper" ref={refer}>
         <img src={imageUrl} className="video-img" alt={video.title} loading="lazy" />
+      <div className="card-title">{video.title}</div>
       </div>
     </div></FocusContext.Provider>
   );

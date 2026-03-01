@@ -21,6 +21,7 @@ interface Props {
   isTop10?: boolean;
   isNot10?: boolean;
   excludeId?: string;
+  showRank?:boolean;
   onFirstCardFocus?: (key: string) => void;
 }
 
@@ -29,6 +30,7 @@ const ListMovies: React.FC<Props> = ({
   title,
   isTop10 = false,
   excludeId,
+  showRank,
   onFirstCardFocus,
 }) => {
   const [videos, setVideos] = useState<any[]>([]);
@@ -116,6 +118,7 @@ const ListMovies: React.FC<Props> = ({
                     index={index}
                     rank={globalIndex}
                     isTop10={isTop10}
+                    showRank={showRank}
                     rowTitle={title}
                     onEnter={(id) => navigate(`/details/${id}`)}
                     onFocusKeyReady={(key) =>

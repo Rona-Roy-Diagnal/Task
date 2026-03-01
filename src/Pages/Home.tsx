@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import "../Styles/Home.css";
 import {
   FocusContext,
+  setFocus,
   useFocusable,
 } from "@noriginmedia/norigin-spatial-navigation";
 import Useanalytics from "../Hooks/Useanalytics";
@@ -11,8 +12,14 @@ import Navbar from "./Navbar";
 const LazyComponent = React.lazy(() => import("./ListMovies"));
 
 const Home = () => {
+  const [firstRowCardFocus,setFirstRowcardFocus]=useState<string|null>(null);
+useEffect(()=>{
+  if(firstRowCardFocus){
+    setFocus(firstRowCardFocus);
+  }
+},[firstRowCardFocus])
   const { Pageview } = Useanalytics();
-  const { ref, focusKey } = useFocusable({ trackChildren: true });
+  const { ref, focusKey } = useFocusable();
   useEffect(() => {
     Pageview("Home");
   }, []);
@@ -27,14 +34,17 @@ const Home = () => {
             <LazyComponent
               title="DRAMA"
               genre="DRAMA"
-              onFirstCardFocus={(_key) => {}}
+              onFirstCardFocus={(key) => { if(!firstRowCardFocus){
+            setFirstRowcardFocus(key);
+          }}}
             />
             <LazyComponent
               title="TOP 10 MOVIES"
               genre="TOP-10-MOVIES"
               isTop10={true}
-              onFirstCardFocus={(_key) => {}}
+              onFirstCardFocus={(_key) => {}} showRank={true}
             />
+              <LazyComponent title='MARVEL-SPIDERMAN' genre='SPIDER-VERSE' isTop10={true} showRank={false}/>
             <LazyComponent
               title="DOCUMENTARIES"
               genre="DOCUMENTARIES"

@@ -1,4 +1,5 @@
-.navbar{
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,47 +7,81 @@
   padding: 2vh 3vw;
   height: 60px;
 }
-.left-nav{
+
+.left-nav {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.heading{
+
+.nav-items {
+  margin-left: 40px;
+  display: flex;
+  gap: 30px;
+}
+
+.heading {
   font-size: 50px;
   font-weight: bold;
   color: #E50914;
+  font-family: fantasy;
 }
-.login-btn{
-  padding: 8px 18px;
+
+.login-btn {
+  color: white;
+  background: transparent;
+  height: 6vh;
+  border: 0.2vw solid #E50914;
   background-color: #E50914;
-  border: none;
-  border-radius: 5px;
+  border-radius: 1vw;
+  align-self: center;
+  width: 100%;
+  font-size: 1vw;
   font-weight: bold;
   cursor: pointer;
- color: white;
-}
-.nav-link{
-  text-decoration: none;
-  font-size: 22px;
-  color: #E50914;
+  transition: all 0.2s ease;
+   margin: 8px;
 }
 
-.focused{
-   /* transform: scale(1.1);  */
-  transition: transform 0.2s,outline 0.2s;
+.login-btn.focused {
+  /* transform: scale(1.1);  */
+  transition: transform 0.2s, outline 0.2s;
   z-index: 3;
-   outline: 3px solid white; 
+  outline: 3px solid white;
 }
-.navbar-item:hover{
-transform: scale(1.05);
-cursor: pointer;
+
+.navbar-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
-.navbar-item{
+
+.navbar-item {
   cursor: pointer;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8c8c8c82;
+  outline: none;
 }
 
-.login-btn:hover{
+.navbar-item.focused {
+  transition: transform 0.2s;
+  z-index: 3;
+  color: white;
+  outline: none;
+}
+
+.nav-title {
+  display: none;
+}
+
+.navbar-item.focused .nav-title {
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+}
+
+.login-btn:hover {
   transform: scale(1.1);
 }
-

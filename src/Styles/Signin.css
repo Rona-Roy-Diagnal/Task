@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.75);
   padding: 4vw;
   box-sizing: border-box;
 }
@@ -14,33 +14,43 @@
 .outer h2 {
   background: transparent;
   color: white;
-  font-size: 5vw;
+  font-size: 3vw;
   margin-bottom: 2vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.outer-sub {
+  width: 40%;
+  padding: 4vw;
+  margin: 1vh;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 1vw;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .inp-form {
   width: 100%;
-  max-width: 450px;
-  color: white;
-  padding: 4vw;
+  padding: 2vw;
   margin: 1vh;
   background: transparent;
-  border: 0.3vw solid #E50914;
   border-radius: 1vw;
   text-align: center;
   box-sizing: border-box;
 }
 
 .inp {
-  color: white;
-  border: 0.2vw solid #E50914;
-  margin: 1vh 0;
+  margin: 1vh;
   padding: 1.5vh;
   width: 100%;
   border-radius: 0.5vw;
-  font-size: 1.5vw;
-  
+  font-size: 1.2vw;
+  background-color: #333;
+  color: white;
   box-sizing: border-box;
+  appearance: none;
+  border: 1px solid #333;
+  outline: none;
 }
 
 .login-button {
@@ -48,7 +58,7 @@
   color: white;
   background: transparent;
   height: 6vh;
-  border: 0.2vw solid white;
+  border: 0.2vw solid #E50914;
   background-color: #E50914;
   border-radius: 1vw;
   align-self: center;
@@ -58,17 +68,17 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.inp-div{
+
+.inp-div {
   background: transparent;
 }
+
 .login-button:hover {
-  
- 
   color: white;
 }
 
-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+.input:placeholder {
+  color: #8c8c8c;
 
 }
 
@@ -83,4 +93,9 @@ input::placeholder {
   z-index: 3;
   outline: 0.4vw solid white;
   border: 0;
+}
+
+.error {
+  color: red;
+  background: transparent;
 }

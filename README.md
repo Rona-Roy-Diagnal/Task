@@ -69,3 +69,6 @@ Make sure to have [Node.js](https://nodejs.org/) installed on your machine.
 - `npm run dev`: Starts the local development server with Hot Module Replacement (HMR).
 - `npm run build`: Compiles the TypeScript configurations and builds the production-ready static web bundle (usable for `.wgt` and `.ipk` packaging).
 
+ ## Issues
+ - The issues faced are documented here :
+ [ISSUES.md](./ISSUES.md)
