@@ -33,7 +33,7 @@
   height: fit-content;
   border: 0.2vw solid #E50914;
   background-color: #E50914;
-  border-radius: 1vw;
+  /* border-radius: 1vw; */
   align-self: center;
   width: 100%;
   font-size: 1vw;

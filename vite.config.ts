@@ -15,7 +15,8 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: 'inline',
-    minify: true,
+    minify: "terser",
+    cssTarget:"chrome38",
     cssMinify: true,
     cssCodeSplit: false,
     rollupOptions: {

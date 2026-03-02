@@ -16,6 +16,7 @@ const Signin: React.FC = () => {
   const [error, setError] = useState<string>("");
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const logref=useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
   const { Login } = Useanalytics();
   const handleLogin = async () => {
@@ -37,6 +38,9 @@ const Signin: React.FC = () => {
 
   const loginBtn = useFocusable({
     focusKey: "login_btn",
+    onFocus:()=>{
+      logref.current?.focus();
+    },
     onEnterPress: handleLogin,
   });
   //  const {ref}=useFocusable({focusKey:"login_focus",focusable:true})
@@ -110,14 +114,15 @@ const Signin: React.FC = () => {
           ></input>
         </div>
         {error && <div className="error">{error}</div>}
+        <div  className="btn-div" ref={loginBtn.ref}>
         <button
           type="button"
-          ref={loginBtn.ref}
+         ref={logref}
           className={`login-button ${loginBtn.focused ? "focused" : ""}`}
           onClick={handleLogin}
         >
           Login
-        </button>
+        </button></div>
       </form>
       </div>
     </div>

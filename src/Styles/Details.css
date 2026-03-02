@@ -10,7 +10,7 @@
 }
 
 .details-overlay {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.7);
   width: 100%;
   padding: 40px;
   display: flex;
@@ -60,7 +60,10 @@
   margin: 0.8vw;
   font-size: 1.5vw;
 }
-
+.loading{
+  color: white;
+  font-size: 40px;
+}
 .right-content {
   top: 0;
   left: 1vw;
@@ -109,7 +112,7 @@
 
 .play-btn {
   margin: 1vw;
-  font-size: 1.5vw;
+  font-size: 1vw;
   padding: 1vw 2vw;
   border-radius: 0.5vw;
   font-family: 'poppins', sans-serif;

@@ -6,6 +6,7 @@
 
 .layout-header {
   background: transparent;
+  margin-left:4px ;
 }
 
 .layout-header h2 {
@@ -30,6 +31,7 @@
   overflow-x: auto;
   scroll-behavior: auto;
   background: transparent;
+  margin-left: 3px;
 }
 
 .layout-body::-webkit-scrollbar {
@@ -47,13 +49,14 @@
   border-radius: 0.6vw;
   background: transparent;
   padding: 1%;
+
 }
 
 .normal-card {
   position: relative;
   width: 500;
 
-  
+
   flex-shrink: 0;
   cursor: pointer;
   transition: transform 0.25s ease;
@@ -69,6 +72,7 @@
   background: transparent;
   margin-top: 5px;
   margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 .normal-card .video-img {
@@ -165,7 +169,7 @@
 .normal-card:hover,
 .top10-card:hover
  {
-  transform: scale(1.03);
+  transform: scale(1.01);
   z-index: 10;
   outline: 3px solid white;
 }
@@ -204,6 +208,7 @@
   overflow-x: hidden;
   position: relative;
   background: transparent;
+  margin-left: 6px;
 }
 
 .left-arrow {
