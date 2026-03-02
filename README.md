@@ -72,3 +72,7 @@ Make sure to have [Node.js](https://nodejs.org/) installed on your machine.
  ## Issues
  - The issues faced are documented here :
  [ISSUES.md](./ISSUES.md)
+
+ ## Techhnical Approach Document
+ - The Technical approach document is attached below:
+   [TAD](https://diagnal.atlassian.net/wiki/x/XoCf0)

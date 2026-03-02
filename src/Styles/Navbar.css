@@ -5,7 +5,7 @@
   align-items: center;
   color: #E50914;
   padding: 2vh 3vw;
-  height: 60px;
+  height: 70px;
 }
 
 .left-nav {
@@ -24,13 +24,13 @@
   font-size: 50px;
   font-weight: bold;
   color: #E50914;
-  font-family: fantasy;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .login-btn {
   color: white;
   background: transparent;
-  height: 6vh;
+  height: fit-content;
   border: 0.2vw solid #E50914;
   background-color: #E50914;
   border-radius: 1vw;
@@ -40,7 +40,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
-   margin: 8px;
+   margin: 7px;
 }
 
 .login-btn.focused {
