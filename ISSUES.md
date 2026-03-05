@@ -30,4 +30,4 @@ The application was not running on samsung TV while it run on simulator properly
 **Solution** 
 - **Build Output:** Overrode Vite defaults in `vite.config.ts` to pack things safely.
 - **Privileges:** Exposed Tizen native privileges in `config.xml` to allow `<tizen:privilege name="http://tizen.org/privilege/internet"/>` access.
-- **CORS:** Forced `Access-Control-Allow-Origin: *` to strictly prevent blocking the TV's origin requests against the backend.
+
