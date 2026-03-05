@@ -133,12 +133,12 @@ const VideoService = ({
 
     // Buttons
     let playButton: HTMLElement | null = document.getElementById("play-pause");
-    let muteButton = document.getElementById("mute");
-    let fullScreenButton = document.getElementById("full-screen");
+    // let muteButton = document.getElementById("mute");
+    // let fullScreenButton = document.getElementById("full-screen");
 
     // Sliders
     let seekBar:any= document.getElementById("seek-bar");
-    let volumeBar = document.getElementById("volume-bar");
+    // let volumeBar = document.getElementById("volume-bar");
 
     if (playButton == null) return;
     playButton.addEventListener("click", function () {
