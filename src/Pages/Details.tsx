@@ -31,7 +31,7 @@ const Details: React.FC = () => {
   const videoBtn = useFocusable({
     focusKey: "video_btn",
     onEnterPress: () => {
-      handlePlay;
+      handlePlay();
       contentSelect({
         contentId: details.ContentGuid,
         contentTitle: details.title,

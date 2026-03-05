@@ -95,7 +95,7 @@
 .focused {
  transition: transform 0.2s ease, outline 0.2s ease;
   /* outline: 0.3vw solid white; */
-  transform: scale(1.05);
+  transform: scale(1.03);
   outline-offset: 0vw;
 }
 

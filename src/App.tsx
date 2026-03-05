@@ -13,7 +13,7 @@ import { logAppLaunch } from "./Utils/Loggly";
 import RouterPages from "./Pages/RouterPage";
 import TizenBackButton from "./Services/CustombackServ";
 
-init({ debug: false, visualDebug: false });
+init({ debug: true, visualDebug: false });
 
 const App: React.FC = () => {
   useEffect(() => {
