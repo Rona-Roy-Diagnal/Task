@@ -2,8 +2,6 @@
   "name": "netflixclone",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  
   "scripts": {
     "dev": "vite --open",
     "build": "tsc -b && vite build ",
@@ -15,7 +13,6 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/video.js": "^7.3.58",
     "@types/youtube": "^0.1.2",
-    "@vitejs/plugin-legacy": "^7.2.1",
     "@vitejs/plugin-react-swc": "^4.2.3",
     "axios": "^1.13.2",
     "core-js": "^3.48.0",
@@ -28,25 +25,28 @@
     "react-youtube": "^10.1.0",
     "regenerator-runtime": "^0.14.1",
     "shaka-player": "^4.16.12",
-    "terser": "^5.46.0",
     "video.js": "^8.23.6",
-    "vite-plugin-babel": "^1.5.1"
+    "vite-plugin-babel": "^1.5.1",
+    "whatwg-fetch": "^3.6.20"
   },
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.28.6",
+    "@babel/preset-env": "^7.29.0",
     "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-legacy": "^7.2.1",
     "@vitejs/plugin-react": "^5.1.1",
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "terser": "^5.46.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "vite": "^7.3.1"
   },
   "browserslist": {
     "development": [

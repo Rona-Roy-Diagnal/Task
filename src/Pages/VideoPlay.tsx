@@ -7,17 +7,17 @@ const url=import.meta.env.VITE_VIDEO_URL
   const {details}=state;
   const viddeooptions = {
     autoplay: true,
-    controls: true,
+    // controls: true,
     fluid: true,
     responsive: true,
     experimentalSvgIcons: true,
-    playbackRates: [0.5, 1, 1.5, 2],
-    controlBar: {
-      skipButtons: {
-        forward: 10,
-        backward: 10,
-      },
-    },
+    // playbackRates: [0.5, 1, 1.5, 2],
+    // controlBar: {
+    //   skipButtons: {
+    //     forward: 10,
+    //     backward: 10,
+    //   },
+    // },
     sources: [
       {
         src: url,

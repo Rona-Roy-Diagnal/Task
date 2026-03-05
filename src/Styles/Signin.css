@@ -60,7 +60,7 @@
   margin-top: 3vh;
   color: white;
   background: transparent;
-  height: fit-content;
+  /* height: fit-content; */
   border: 0.2vw solid #E50914;
   background-color: #E50914;
   border-radius: 1vw;
@@ -93,10 +93,10 @@
 }
 
 .focused {
-  transition: transform 0.2s, outline 0.2s;
-  z-index: 3;
-  outline: 0.4vw solid white;
-  border: 0;
+ transition: transform 0.2s ease, outline 0.2s ease;
+  /* outline: 0.3vw solid white; */
+  transform: scale(1.05);
+  outline-offset: 0vw;
 }
 
 .error {

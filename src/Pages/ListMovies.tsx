@@ -1,9 +1,7 @@
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from "react";
 import "../Styles/ListMovies.css";
 import { useNavigate } from "react-router-dom";
-
 
 import {
   useFocusable,
@@ -21,7 +19,7 @@ interface Props {
   isTop10?: boolean;
   isNot10?: boolean;
   excludeId?: string;
-  showRank?:boolean;
+  showRank?: boolean;
   onFirstCardFocus?: (key: string) => void;
 }
 

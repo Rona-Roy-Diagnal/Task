@@ -1,4 +1,3 @@
-
 .list-container {
   padding: 1vw;
   background: transparent;
@@ -6,7 +5,7 @@
 
 .layout-header {
   background: transparent;
-  margin-left:4px ;
+  margin-left: 4px;
 }
 
 .layout-header h2 {
@@ -38,7 +37,6 @@
   display: none;
 }
 
-
 .image-wrapper {
   width: 100%;
   height: 100%;
@@ -49,15 +47,13 @@
   border-radius: 0.6vw;
   background: transparent;
   padding: 1%;
-
 }
 
 .normal-card {
   position: relative;
   width: 500;
-
-
   flex-shrink: 0;
+  height: 13vw;
   cursor: pointer;
   transition: transform 0.25s ease;
   border-radius: 4px;
@@ -80,7 +76,7 @@
   height: 100%;
   display: block;
   object-fit: contain;
-  
+
   border-radius: 0.6vw;
   background: transparent;
 }
@@ -99,30 +95,30 @@
   align-items: center;
   background: transparent;
 }
-.to10-card .has-rank{
+.to10-card .has-rank {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.top10-card.has-rank .top10-rank{
+.top10-card.has-rank .top10-rank {
   flex: 0 0 30%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 }
-.top10-card.has-rank .video-img{
+.top10-card.has-rank .video-img {
   flex: 0 0 70%;
 }
-.top10-card.no-rank{
+.top10-card.no-rank {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.2vw;
 }
-.top10-card.no-rank .top10-rank{
+.top10-card.no-rank .top10-rank {
   display: none;
 }
-.top10-card.no-rank .video-img{
+.top10-card.no-rank .video-img {
   flex: 0 0 100%;
   object-position: center;
 }
@@ -131,15 +127,17 @@
 
   display: flex;
   justify-content: flex-start;
- 
+
   align-items: flex-end;
- 
+
   z-index: 5;
   color: white;
   font-size: 10vw;
   font-weight: 700;
   line-height: 0.75;
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8), 4px 4px 8px rgba(0, 0, 0, 0.6);
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, 0.8),
+    4px 4px 8px rgba(0, 0, 0, 0.6);
   pointer-events: none;
   background: transparent;
 }
@@ -147,39 +145,39 @@
 .top10-row .div-horizontal {
   flex: 0 0 auto;
   width: 18vw;
- 
+
   margin: 0.5vw 0.3vw;
   background: transparent;
 }
 
 .top10-card .video-img {
   flex: 0 0 70%;
-  
+
   height: 100%;
   aspect-ratio: 2/3;
   display: block;
   object-fit: cover;
-  
+
   object-position: right;
   border-radius: 0.4vw;
   background: transparent;
 }
 
-
 .normal-card:hover,
-.top10-card:hover
- {
-  transform: scale(1.01);
+.top10-card:hover {
   z-index: 10;
-  outline: 3px solid white;
+  /* outline: 3px solid white; */
+  transform: scale(1.04);
 }
 
 .focused {
-  transition: transform 0.2s ease, outline 0.2s ease;
-  outline: 0.3vw solid white;
+  transition:
+    transform 0.2s ease,
+    outline 0.2s ease;
+  /* outline: 0.3vw solid white; */
   outline-offset: 0vw;
+  transform: scale(1.04);
 }
-
 
 .arrow {
   position: absolute;
@@ -223,7 +221,6 @@
   z-index: 30;
 }
 
-
 .row-wrapper:hover .arrow {
   opacity: 1;
 }
@@ -238,10 +235,15 @@
   left: 0;
   width: 100%;
   padding: 1.5vw 0.8vw 0.8vw 0.8vw;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 50%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.8) 50%,
+    transparent 100%
+  );
   color: white;
   font-size: 1.5vw;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   font-weight: 700;
   text-align: center;
   border-bottom-left-radius: 0.6vw;

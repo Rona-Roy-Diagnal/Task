@@ -51,3 +51,23 @@ height: 321px !important;
 .focused{
     border: none;
 }
+#play{
+    color: white;
+    background: transparent;
+}
+#pause{
+    color: white;
+    background: transparent;
+}
+#full-screen{
+    color: white;
+    background: transparent;
+}
+/* #seek-bar{
+    width: 100%;
+ } */
+.video-div{
+     display: flex;
+  justify-content: space-between;
+  align-items: center; 
+} 

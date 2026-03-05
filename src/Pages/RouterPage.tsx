@@ -44,12 +44,22 @@ const RouterPages: React.FC = () => {
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/navbar" element={<Navbar />}></Route>
-          <Route path="/signin" element={<LoginRoute>
-            <Signin></Signin>
-          </LoginRoute>}></Route>
-         <Route path="/home" element={<PrivateRoute>
-          <Home/>
-         </PrivateRoute>}></Route>
+          <Route
+            path="/signin"
+            element={
+              <LoginRoute>
+                <Signin></Signin>
+              </LoginRoute>
+            }
+          ></Route>
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }
+          ></Route>
           <Route path="/details/:id" element={<Details />}></Route>
           <Route path="/movies" element={<Movies />}></Route>
           <Route path="/kids" element={<Kids />}></Route>

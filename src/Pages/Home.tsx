@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { Suspense, useEffect, useState } from "react";
 import "../Styles/Home.css";
 import {
@@ -12,12 +11,14 @@ import Navbar from "./Navbar";
 const LazyComponent = React.lazy(() => import("./ListMovies"));
 
 const Home = () => {
-  const [firstRowCardFocus,setFirstRowcardFocus]=useState<string|null>(null);
-useEffect(()=>{
-  if(firstRowCardFocus){
-    setFocus(firstRowCardFocus);
-  }
-},[firstRowCardFocus])
+  const [firstRowCardFocus, setFirstRowcardFocus] = useState<string | null>(
+    null,
+  );
+  useEffect(() => {
+    if (firstRowCardFocus) {
+      setFocus(firstRowCardFocus);
+    }
+  }, [firstRowCardFocus]);
   const { Pageview } = Useanalytics();
   const { ref, focusKey } = useFocusable();
   useEffect(() => {
@@ -34,26 +35,28 @@ useEffect(()=>{
             <LazyComponent
               title="DRAMA"
               genre="DRAMA"
-              onFirstCardFocus={(key) => { if(!firstRowCardFocus){
-            setFirstRowcardFocus(key);
-          }}}
+              onFirstCardFocus={(key) => {
+                if (!firstRowCardFocus) {
+                  setFirstRowcardFocus(key);
+                }
+              }}
             />
             <LazyComponent
               title="TOP 10 MOVIES"
               genre="TOP-10-MOVIES"
               isTop10={true}
-              onFirstCardFocus={(_key) => {}} showRank={true}
+              showRank={true}
             />
-              <LazyComponent title='MARVEL-SPIDERMAN' genre='SPIDER-VERSE' isTop10={true} showRank={false}/>
             <LazyComponent
-              title="DOCUMENTARIES"
-              genre="DOCUMENTARIES"
-              onFirstCardFocus={(_key) => {}}
+              title="MARVEL-SPIDERMAN"
+              genre="SPIDER-VERSE"
+              isTop10={true}
+              showRank={false}
             />
+            <LazyComponent title="DOCUMENTARIES" genre="DOCUMENTARIES" />
             <LazyComponent
               title="CHINESE"
               genre="CHINESE-NEW-YEAR-BINGE-FEST"
-              onFirstCardFocus={(_key) => {}}
             />
           </Suspense>
         </div>
