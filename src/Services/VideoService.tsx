@@ -16,8 +16,8 @@ import {
 } from "@noriginmedia/norigin-spatial-navigation";
 import useAnalytics from "../Hooks/Useanalytics";
 import { logPlaybackError, logPlaybackSuccess } from "../Utils/Loggly";
-import { FaPlay } from "react-icons/fa6";
-import { FaPause } from "react-icons/fa";
+// import { FaPlay } from "react-icons/fa6";
+// import { FaPause } from "react-icons/fa";
 interface VideoServiceProps {
   options: any;
   onReady?: (player: Player) => void;
@@ -127,67 +127,67 @@ const VideoService = ({
     const current = playerRef.current.currentTime() ?? 0;
     playerRef.current.currentTime(Math.max(0, current + seconds));
   };
-  window.onload = function () {
-    // Video
-    let video:any = document.getElementById("video");
+//   window.onload = function () {
+//     // Video
+//     let video:any = document.getElementById("video");
 
-    // Buttons
-    let playButton: HTMLElement | null = document.getElementById("play-pause");
-    // let muteButton = document.getElementById("mute");
-    // let fullScreenButton = document.getElementById("full-screen");
+//     // Buttons
+//     let playButton: HTMLElement | null = document.getElementById("play-pause");
+//     // let muteButton = document.getElementById("mute");
+//     // let fullScreenButton = document.getElementById("full-screen");
 
-    // Sliders
-    let seekBar:any= document.getElementById("seek-bar");
-    // let volumeBar = document.getElementById("volume-bar");
+//     // Sliders
+//     let seekBar:any= document.getElementById("seek-bar");
+//     // let volumeBar = document.getElementById("volume-bar");
 
-    if (playButton == null) return;
-    playButton.addEventListener("click", function () {
-      if (video == null) return;
-      if (video.paused == true) {
-        // Play the video
-        video.play();
+//     if (playButton == null) return;
+//     playButton.addEventListener("click", function () {
+//       if (video == null) return;
+//       if (video.paused == true) {
+//         // Play the video
+//         video.play();
 
-        // Update the button text to 'Pause'
-        playButton.innerHTML = "Pause";
-      } else {
-        // Pause the video
-        video.pause();
+//         // Update the button text to 'Pause'
+//         playButton.innerHTML = "Pause";
+//       } else {
+//         // Pause the video
+//         video.pause();
 
-        // Update the button text to 'Play'
-        playButton.innerHTML = "Play";
-      }
-    });
+//         // Update the button text to 'Play'
+//         playButton.innerHTML = "Play";
+//       }
+//     });
   
 
-    // Event listener for the seek bar
-    if (seekBar == null) return;
-    seekBar.addEventListener("change", function () {
-      // Calculate the new time
-      const time = video.duration * (seekBar.value / 100);
+//     // Event listener for the seek bar
+//     if (seekBar == null) return;
+//     seekBar.addEventListener("change", function () {
+//       // Calculate the new time
+//       const time = video.duration * (seekBar.value / 100);
 
-      // Update the video time
-      video.currentTime = time;
-    });
+//       // Update the video time
+//       video.currentTime = time;
+//     });
 
-    // Update the seek bar as the video plays
-    video.addEventListener("timeupdate", function () {
-      // Calculate the slider value
-      const value = (100 / video.duration) * video.currentTime;
+//     // Update the seek bar as the video plays
+//     video.addEventListener("timeupdate", function () {
+//       // Calculate the slider value
+//       const value = (100 / video.duration) * video.currentTime;
 
-      // Update the slider value
-      seekBar.value = value;
-    });
+//       // Update the slider value
+//       seekBar.value = value;
+//     });
 
-    // Pause the video when the slider handle is being dragged
-seekBar.addEventListener("mousedown", function() {
-  video.pause();
-});
+//     // Pause the video when the slider handle is being dragged
+// seekBar.addEventListener("mousedown", function() {
+//   video.pause();
+// });
 
-// Play the video when the slider handle is dropped
-seekBar.addEventListener("mouseup", function() {
-  video.play();
-});
-  };
+// // Play the video when the slider handle is dropped
+// seekBar.addEventListener("mouseup", function() {
+//   video.play();
+// });
+//   };
 
   useEffect(() => {
     return () => {
@@ -202,7 +202,7 @@ seekBar.addEventListener("mouseup", function() {
   return (
     <div ref={playvideo.ref} data-vjs-player>
       <div ref={videoRef} className="video-js" />
-      <div className="video-div">
+      {/* <div className="video-div">
       <div id="video-controls">
        {playerRef.current?.play()?<button type="button" id="play" onClick={togglePlay}>
           <FaPlay />
@@ -213,7 +213,7 @@ seekBar.addEventListener("mouseup", function() {
        <> <input type="range" id="seek-bar" value="0" /></>
 
       </div>
-      </div>
+      </div> */}
     </div>
   );
 };
