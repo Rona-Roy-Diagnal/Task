@@ -1,9 +1,8 @@
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #E50914;
+  color: #e50914;
   padding: 2vh 3vw;
   height: 70px;
 }
@@ -21,18 +20,18 @@
 }
 
 .heading {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
-  color: #E50914;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #e50914;
+  /* font-family: futura; */
 }
 
 .login-btn {
   color: white;
   background: transparent;
-  /* height: fit-content; */
-  border: 0.2vw solid #E50914;
-  background-color: #E50914;
+  height: fit-content;
+  border: 0.2vw solid #e50914;
+  background-color: #e50914;
   /* border-radius: 1vw; */
   align-self: center;
   width: 100%;
@@ -40,25 +39,29 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
-   margin: 5px;
+  margin: 5px;
 }
 
 .login-btn.focused {
-  /* transform: scale(1.1);  */
-  transition: transform 0.2s, outline 0.2s;
-  z-index: 3;
-  outline: 3px solid white;
+  transform: scale(1.04);
+  outline-offset: 0vw;
   /* border: 2px solid white; */
+  font-size: 1.2vw;
 }
 
-.navbar-item:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+.navbar-item:hover .nav-title {
+  /* transition: transform 0.2s; */
+  z-index: 3;
+  outline: none;
+  display: inline-block;
+  font-weight: bold;
+  color: white;
 }
 
 .navbar-item {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -67,16 +70,16 @@
 }
 
 .navbar-item.focused {
-  transition: transform 0.2s;
+  /* transition: transform 0.2s; */
   z-index: 3;
   color: white;
   outline: none;
 }
 
-.nav-title {
+/* .nav-title {
   display: none;
-}
-
+} */
+ 
 .navbar-item.focused .nav-title {
   display: inline-block;
   font-weight: bold;

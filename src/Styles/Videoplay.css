@@ -3,6 +3,7 @@
     height: 100% !important;
       display: inline;
       position: relative;
+      padding: 0 !important;
 }
 .vjs-big-play-centered{
     width: 507px !important;
@@ -48,26 +49,64 @@ height: 321px !important;
     background-color: black;
 }
 
-.focused{
-    border: none;
+.bottom-controls .btn .focused{
+    outline: 2px solid white;
 }
-#play{
-    color: white;
-    background: transparent;
+.btn :hover{
+  border: 3px solid white;
 }
-#pause{
-    color: white;
-    background: transparent;
-}
-#full-screen{
-    color: white;
-    background: transparent;
-}
-/* #seek-bar{
-    width: 100%;
- } */
+
 .video-div{
      display: flex;
   justify-content: space-between;
   align-items: center; 
 } 
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: black;
+}
+
+.video-js {
+  width: 100%;
+  height: 100%;
+}
+
+.ott-controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(transparent,rgba(0,0,0,0.8));
+  transition: opacity 0.3s;
+}
+
+.ott-controls.hide {
+  opacity: 0;
+}
+
+.ott-controls.show {
+  opacity: 1;
+}
+
+
+
+.bottom-controls button {
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.bottom-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: white;
+}
+
+.bottom-controls input[type="range"] {
+  flex: 1;
+}

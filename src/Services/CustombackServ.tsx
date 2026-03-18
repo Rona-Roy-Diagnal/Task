@@ -10,7 +10,7 @@ const TizenBackButton = () => {
   useEffect(() => {
     const handleBackButton = (e: any) => {
       // check if the key is the back button
-      if (e.keyName === 'back') {
+      if (e.keyName === "back") {
         // logic for exiting or going back
         if (window.history.length > 1) {
           window.history.back();
@@ -24,11 +24,11 @@ const TizenBackButton = () => {
     };
 
     // add listener
-    document.addEventListener('tizenhwkey', handleBackButton);
+    document.addEventListener("tizenhwkey", handleBackButton);
 
     // cleanup listener
     return () => {
-      document.removeEventListener('tizenhwkey', handleBackButton);
+      document.removeEventListener("tizenhwkey", handleBackButton);
     };
   }, []);
 

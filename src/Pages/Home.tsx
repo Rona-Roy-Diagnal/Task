@@ -1,3 +1,4 @@
+//home page : page after login
 import React, { Suspense, useEffect, useState } from "react";
 import "../Styles/Home.css";
 import {
@@ -7,6 +8,7 @@ import {
 } from "@noriginmedia/norigin-spatial-navigation";
 import Useanalytics from "../Hooks/Useanalytics";
 import Navbar from "./Navbar";
+import Banner from "./Banner";
 
 const LazyComponent = React.lazy(() => import("./ListMovies"));
 
@@ -29,35 +31,44 @@ const Home = () => {
     <div ref={ref}>
       <FocusContext.Provider value={focusKey}>
         <Navbar />
-
+<Banner/>
         <div className="outer-cont">
-          <Suspense fallback={<div className="lazy-div">Loading...</div>}>
-            <LazyComponent
-              title="DRAMA"
-              genre="DRAMA"
+          <Suspense fallback={<div className="lazy-div"></div>}>
+            {/* <LazyComponent
+              title="Top 10 Movies"
+              genre="sci-fi"
+              isTop10={true}
+              showRank={true}
               onFirstCardFocus={(key) => {
                 if (!firstRowCardFocus) {
                   setFirstRowcardFocus(key);
                 }
               }}
-            />
+            /> */}
+            <LazyComponent title="Drama" genre="DRAMA"  onFirstCardFocus={(key) => {
+                if (!firstRowCardFocus) {
+                  setFirstRowcardFocus(key);
+                }
+              }}/>
+
+            <LazyComponent title="Featured Originals" genre="documentary" />
+            {/* <div className="bg-img-div"> */}
+              {/* <img className="spider-img" src="/Spider-bg-desktop_6197.jpg" alt="marvel"/> */}
+              {/* <div className="rails-bg"  style={{backgroundImage:"url('/Spider-bg-desktop_6197.jpg')",height:"100%",width:"100%"}}> */}
+              <LazyComponent
+                title="Marvel - Spiderman"
+                genre="fantasy"
+                isTop10={true}
+                showRank={false}
+              />
+             
+            {/* </div>
+              </div> */}
             <LazyComponent
-              title="TOP 10 MOVIES"
-              genre="TOP-10-MOVIES"
-              isTop10={true}
-              showRank={true}
+              title="Romance"
+              genre="romance"
             />
-            <LazyComponent
-              title="MARVEL-SPIDERMAN"
-              genre="SPIDER-VERSE"
-              isTop10={true}
-              showRank={false}
-            />
-            <LazyComponent title="DOCUMENTARIES" genre="DOCUMENTARIES" />
-            <LazyComponent
-              title="CHINESE"
-              genre="CHINESE-NEW-YEAR-BINGE-FEST"
-            />
+            <LazyComponent title="Kids and Family" genre="Kids%20and%20Family" />
           </Suspense>
         </div>
       </FocusContext.Provider>

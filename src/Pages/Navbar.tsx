@@ -1,33 +1,36 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../Styles/Navbar.css";
 import { useNavigate } from "react-router-dom";
-import { FocusContext, useFocusable } from "@noriginmedia/norigin-spatial-navigation";
+import {
+  FocusContext,
+  useFocusable,
+} from "@noriginmedia/norigin-spatial-navigation";
 import { SignOut } from "../Services/AuthService";
 import Useanalytics from "../Hooks/Useanalytics";
 import UseSingleNav from "../Hooks/UseSingleNav";
-import { MdHome, MdLocalMovies, MdChildCare } from "react-icons/md";
+// import { MdHome, MdLocalMovies, MdChildCare } from "react-icons/md";
 export interface Props {
   onFocusKeyReady?: (key: string) => void;
- 
+
 }
 const Navbar: React.FC<Props> = () => {
-  const {Logout}=Useanalytics();
-  
- const safe=UseSingleNav()
+  const { Logout } = Useanalytics();
+
+  const safe = UseSingleNav();
   const navigate = useNavigate();
-const [lock,setLock]=useState(false);
-  const {ref,focusKey}=useFocusable({focusKey:"nav_key",
-    onFocus:()=>{logoutnav.focusSelf()
-    
-    ref.current.scrollIntoView({
+  const [lock, setLock] = useState(false);
+  const { ref, focusKey } = useFocusable({
+    focusKey: "nav_key",
+    onFocus: () => {
+      logoutnav.focusSelf();
+
+      ref.current.scrollIntoView({
         behaviour: "smooth",
-        block: "nearest"
-      })
-    }
-  })
-  const homenav  = useFocusable({
+        block: "nearest",
+      });
+    },
+  });
+  const homenav = useFocusable({
     focusKey: "home_nav",
     onEnterPress: () => handleHome(),
     onArrowPress: (direction) => {
@@ -49,27 +52,25 @@ const [lock,setLock]=useState(false);
       }
     },
   });
-  const handleLogin=()=>{
- safe('/signin')
-  setLock(true)
-}
+  const handleLogin = () => {
+    safe("/signin");
+    setLock(true);
+  };
 
-const handleLogout=()=>{
-   SignOut();
-      navigate("/",{replace:true});
-      Logout();
-    
-      
-}
-const handleKids=()=>{
-  safe('/kids');
-}
-const handleHome=()=>{
-safe('/home')
-}
-const handleMovies=()=>{
- safe('/movies')
-}
+  const handleLogout = () => {
+    SignOut();
+    navigate("/", { replace: true });
+    Logout();
+  };
+  const handleKids = () => {
+    safe("/kids");
+  };
+  const handleHome = () => {
+    safe("/home");
+  };
+  const handleMovies = () => {
+    safe("/movies");
+  };
   const kidsnav = useFocusable({
     focusKey: "kids_nav",
     onEnterPress: () => handleKids(),
@@ -84,9 +85,7 @@ const handleMovies=()=>{
   const loginnav = useFocusable({
     focusKey: "login_nav",
     onEnterPress: () => {
-      handleLogin()
-      
-  
+      handleLogin();
     },
     onArrowPress: (direction) => {
       if (direction == "up" || direction == "right") {
@@ -99,8 +98,7 @@ const handleMovies=()=>{
   const logoutnav = useFocusable({
     focusKey: "logout_nav",
     onEnterPress: () => {
-      handleLogout()
-      
+      handleLogout();
     },
     onArrowPress: (direction) => {
       if (direction == "up" || direction == "right") {
@@ -111,64 +109,69 @@ const handleMovies=()=>{
     },
   });
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      homenav.focusSelf();
-    }, 10);
-    return () => clearTimeout(timeout);
-  }, [homenav.focusKey]);
-
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     homenav.focusSelf();
+  //   }, 10);
+  //   return () => clearTimeout(timeout);
+  // }, [homenav.focusKey]);
   const getToken = localStorage.getItem("auth_token");
 
   return (
     <nav className="navbar" ref={ref}>
-   <FocusContext.Provider value={focusKey}>
-      <div className="left-nav">
-        <span className="heading">.FLIX</span>
-         <div className="nav-items">
-       <div
-          ref={homenav.ref}
-          className={`navbar-item ${homenav.focused ? "focused" : ""}`} onClick={handleHome}
-        >
-           <MdHome size={28} />
-              <span className="nav-title">Home</span>
+      <FocusContext.Provider value={focusKey}>
+        <div className="left-nav">
+          <span className="heading">.FLIX</span>
+          <div className="nav-items">
             
-        </div>
-        <div
-          ref={movienav.ref}
-          className={`navbar-item ${movienav.focused ? "focused" : ""}`} onClick={handleMovies}
-        >
-          <MdLocalMovies size={28} />
+            <div
+              ref={homenav.ref}
+              className={`navbar-item ${homenav.focused ? "focused active" : ""}`}
+              onClick={handleHome}
+            >
+             {/* <MdHome size={35} /> */}
+              <span className="nav-title">Home</span>
+            </div>
+            <div
+              ref={movienav.ref}
+              className={`navbar-item ${movienav.focused ? "focused" : ""}`}
+              onClick={handleMovies}
+            >
+              {/* <MdLocalMovies size={35} /> */}
               <span className="nav-title">Movies</span>
-        </div>
-         <div
-          ref={kidsnav.ref}
-          className={`navbar-item ${kidsnav.focused ? "focused" : ""}`} onClick={handleKids}
-        >
-          <MdChildCare size={28} />
+            </div>
+            <div
+              ref={kidsnav.ref}
+              className={`navbar-item ${kidsnav.focused ? "focused" : ""}`}
+              onClick={handleKids}
+            >
+              {/* <MdChildCare size={35} /> */}
               <span className="nav-title">Kids</span>
+            </div>
+          </div>
         </div>
+        <div className="right-nav">
+          {!getToken ? (
+            <button
+              key={loginnav.focusKey}
+              ref={loginnav.ref}
+              className={`login-btn ${loginnav.focused ? "focused" : ""}`}
+              onClick={handleLogin}
+              disabled={lock}
+            >
+              Log in
+            </button>
+          ) : (
+            <button
+              key={logoutnav.focusKey}
+              ref={logoutnav.ref}
+              className={`login-btn ${logoutnav.focused ? "focused" : ""}`}
+              onClick={handleLogout}
+            >
+              Log out
+            </button>
+          )}
         </div>
-      </div>
-      <div className="right-nav">
-        {!getToken ? (
-          <button
-            key={loginnav.focusKey}
-            ref={loginnav.ref}
-            className={`login-btn ${loginnav.focused ? "focused" : ""}`}onClick={handleLogin} disabled={lock}
-          >
-            Log in
-          </button>
-        ) : (
-          <button
-            key={logoutnav.focusKey}
-            ref={logoutnav.ref}
-            className={`login-btn ${logoutnav.focused ? "focused" : ""}`}onClick={handleLogout}
-          >
-            Log out
-          </button>
-        )}
-      </div>
       </FocusContext.Provider>
     </nav>
   );

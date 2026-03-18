@@ -1,4 +1,3 @@
-
 .outer-cont {
   width: 100%;
   min-height: 80vh;
@@ -25,7 +24,6 @@
   font-weight: bold;
   font-size: 6vw;
   color: white;
-
 }
 
 .content {
@@ -67,7 +65,25 @@
   border-radius: 0.3vw;
   cursor: pointer;
 }
+.spider-img {
+  object-fit: contain;
+  width: 100%;
+  z-index: 1;
+  display: block;
 
+}
+.bg-img-div {
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+.rails-bg {
+  z-index: 3;
+ position: relative;
+}
 /* 
 .btns button:hover {
   background-color: transparent;

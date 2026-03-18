@@ -14,10 +14,10 @@ const Kids = () => {
   return (
     <div>
       <Navbar />
-      <Suspense fallback={<div className="lazy-div">Loading...</div>}>
+      <Suspense fallback={<div className="lazy-div"></div>}>
         <LazyComponent
           title="MARVEL : SPIDERMAN"
-          genre="SPIDER-VERSE"
+          genre="fantasy"
           isTop10={true}
           showRank={false}
           onFirstCardFocus={(key) => {
@@ -26,10 +26,10 @@ const Kids = () => {
             }
           }}
         />
-        <LazyComponent title="TOP RATED" genre="KIDS-AND-FAMILY" />
+        <LazyComponent title="Kids and Family" genre="Kids%20and%20Family"/>
       </Suspense>
     </div>
   );
 };
-//call kids api
+
 export default Kids;

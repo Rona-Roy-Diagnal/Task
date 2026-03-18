@@ -82,10 +82,10 @@ const Signin: React.FC = () => {
   return (
     <div
       className="outer"
-      style={{
-        backgroundImage:
-          " linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url(/netflix.jpg)",
-      }}
+      // style={{
+      //   backgroundImage:
+      //     " linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),url(/netflix.jpg)",
+      // }}
     >
       
       <div className="outer-sub">

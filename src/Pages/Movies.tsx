@@ -1,3 +1,4 @@
+
 // movies page
 
 import React, { Suspense, useEffect, useState } from "react";
@@ -16,19 +17,24 @@ const Movies = () => {
   return (
     <div>
       <Navbar />
-      <Suspense fallback={<div className="lazy-div">Loading...</div>}>
+      <Suspense fallback={<div className="lazy-div"></div>}>
         <LazyComponent
-          title="TOP 10 MOVIES"
-          genre="TOP-10-MOVIES"
-          isTop10={true}
-          showRank={true}
+          title="Action"
+          genre="action"
+        
           onFirstCardFocus={(key) => {
             if (!firstRowCardFocus) {
               setFirstRowcardFocus(key);
             }
           }}
         />
-        <LazyComponent title="TOP RATED" genre="KIDS-AND-FAMILY" />
+        <LazyComponent title="Romance" genre="romance" />
+         <LazyComponent
+                title="Marvel - Spiderman"
+                genre="fantasy"
+                isTop10={true}
+                showRank={false}
+              />
       </Suspense>
     </div>
   );

@@ -9,10 +9,10 @@ import {
   setFocus,
 } from "@noriginmedia/norigin-spatial-navigation";
 
-import Card from "./Card";
+
 import { fetchContentByGenre } from "../Services/ContentService";
 import { logApiError } from "../Utils/Loggly";
-
+const Card= React.lazy(() => import("./Card"));
 interface Props {
   genre: string;
   title: string;
@@ -32,7 +32,7 @@ const ListMovies: React.FC<Props> = ({
   onFirstCardFocus,
 }) => {
   const [videos, setVideos] = useState<any[]>([]);
-
+  const [loading, setLoading] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const { ref: rowRef, focusKey: rowFocusKey } = useFocusable({
@@ -66,6 +66,7 @@ const ListMovies: React.FC<Props> = ({
   useEffect(() => {
     updateScroll();
   }, [videos]);
+  
   // Fetch videos
   useEffect(() => {
     try {
@@ -74,6 +75,7 @@ const ListMovies: React.FC<Props> = ({
           ? data.filter((item: any) => item.contentGuid !== excludeId)
           : data;
         setVideos(filtered);
+        setLoading(false);
       });
     } catch (error: any) {
       logApiError(
@@ -84,7 +86,7 @@ const ListMovies: React.FC<Props> = ({
       );
     }
   }, [genre, excludeId]);
-
+if(loading)return <div></div>;
   return (
     <div className="list-container">
       <div className="layout-header">

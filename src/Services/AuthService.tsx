@@ -1,6 +1,4 @@
-
-
-const LOGIN_URL=import.meta.env.VITE_LOGIN_URL;
+const LOGIN_URL = import.meta.env.VITE_LOGIN_URL;
 const AuthService = async (username: string, password: string) => {
   const credential = `${username}::${password}`;
   const utf8Bytes = new TextEncoder().encode(credential);
@@ -15,7 +13,7 @@ const AuthService = async (username: string, password: string) => {
     headers: {
       Authorization: `Basic ${encoded}`,
 
-      "Content-Type":"application/json"
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       platform: "web",
@@ -31,7 +29,7 @@ const AuthService = async (username: string, password: string) => {
   if (!token) {
     throw new Error("token not found");
   }
- 
+
   return token;
 };
 

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 import React, { useEffect } from "react";
 import "../Styles/LandingPage.css";
 import { useFocusable } from "@noriginmedia/norigin-spatial-navigation";
@@ -21,10 +21,10 @@ const LandingPage: React.FC = () => {
   return (
     <div
       className="cover"
-      style={{
-        backgroundImage:
-          " linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),url('/netflix.jpg')",
-      }}
+      // style={{
+      //   backgroundImage:
+      //     " linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),url('/netflix.jpg')",
+      // }}
     >
       <div className="welcome">
         <h1>.FLIX</h1>
@@ -37,6 +37,7 @@ const LandingPage: React.FC = () => {
         >
           Get Started
         </button>
+        <div className="box"></div>
       </div>
     </div>
   );

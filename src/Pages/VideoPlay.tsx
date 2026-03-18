@@ -1,38 +1,36 @@
-import { useLocation } from "react-router-dom";
 import VideoService from "../Services/VideoService";
 
 function VideoPlay() {
-const url=import.meta.env.VITE_VIDEO_URL
-  const {state}=useLocation();
-  const {details}=state;
+  const url = import.meta.env.VITE_VIDEO_URL;
+
+  let title, contentGuid, genre;
+  const detData = sessionStorage.getItem("details");
+  if (detData) {
+    title = JSON.parse(detData);
+    contentGuid = JSON.parse(detData);
+    genre = JSON.parse(detData);
+  }
   const viddeooptions = {
     autoplay: true,
-    // controls: true,
+    controls: false,
     fluid: true,
     responsive: true,
     experimentalSvgIcons: true,
-    // playbackRates: [0.5, 1, 1.5, 2],
-    // controlBar: {
-    //   skipButtons: {
-    //     forward: 10,
-    //     backward: 10,
-    //   },
-    // },
     sources: [
       {
         src: url,
       },
     ],
-  }
+  };
 
   return (
     <div>
       <VideoService
         options={viddeooptions}
-        contentId={details.contentGuid}
-        contentTitle={details.title}
-        contentGenre={details.genre}
-         onReady={() => {
+        contentId={contentGuid}
+        contentTitle={title}
+        contentGenre={genre}
+        onReady={() => {
           console.log("player ready");
         }}
       ></VideoService>
